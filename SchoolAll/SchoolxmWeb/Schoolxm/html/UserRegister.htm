@@ -1,0 +1,238 @@
+﻿#parse("ExampleHead1.htm")
+<script type="text/javascript" src="/js/ajax.js"></script>
+<script type="text/javascript">
+    var allow1 = 1;
+    var allow2 = 1;
+    var allow3 = 1;
+    var allow4 = 1;
+    var allow5 = 1;
+    function checkUserName() {
+        var userName = document.getElementById("txtUsername").value;
+        userName = userName.trim();
+        if (userName.length == 0) {
+            document.getElementById("UserNameMsg").innerHTML = "用户名不能为空";
+            allow1 = 1;
+        }
+        else {
+            if (userName.length < 4 || userName.length > 20) {
+                document.getElementById("UserNameMsg").innerHTML = "用户名长度为4到20位";
+                allow1 = 1;
+            }
+            else {
+                ajax("/CheckUserName.ashx?UserName=" + userName, function (resText) {
+                    if (resText == "ok") {
+                        document.getElementById("UserNameMsg").innerHTML = "用户名可用";
+                        allow1 = 0;
+                    }
+                    else if (resText == "error") {
+                        document.getElementById("UserNameMsg").innerHTML = "用户名已经被占用";
+                        allow1 = 1;
+                    }
+                    else if (resText == "forbid") {
+                        document.getElementById("UserNameMsg").innerHTML = "用户名中含有禁用词，请换用其他用户名";
+                        allow1 = 1;
+                    }
+                    else {
+                        alert("服务器返回意外内容：" + resText);
+                        allow1 = 1;
+                    }
+                });
+            } 
+        }
+    }
+    function checkPassword() {
+        var password = document.getElementById("txtPassword").value;
+        password = password.trim();
+        if (password.length == 0) {
+            document.getElementById("UserPwdMsg").innerHTML = "密码不能为空";
+            allow2 = 1;
+        }
+        else {
+            if (password.length < 4 || password.length > 20) {
+                document.getElementById("UserPwdMsg").innerHTML = "密码长度为4到20位";
+                allow2 = 1;
+            }
+            else {
+                document.getElementById("UserPwdMsg").innerHTML = "";
+                allow2 = 0;
+            }   
+        }
+    }
+    function checkPasswordOK() {
+        var password = document.getElementById("txtPassword").value;
+        var passwordok = document.getElementById("userpwdok").value;
+        passwordok = passwordok.trim();
+        if (passwordok.length == 0) {
+            document.getElementById("UserPwdOKMsg").innerHTML = "确认密码不能为空";
+            allow3 = 1;
+        }
+        else {
+            if (password != passwordok) {
+                document.getElementById("UserPwdOKMsg").innerHTML = "两次密码输入不一致";
+                allow3 = 1;
+            }
+            else {
+                document.getElementById("UserPwdOKMsg").innerHTML = "";
+                allow3 = 0;
+            }
+        }
+    }
+    function checkEmail() {
+        var email = document.getElementById("email").value;
+        email = email.trim();
+        if (email == "") {
+            document.getElementById("UserEmailMsg").innerHTML = "邮箱不能为空";
+            allow4 = 1;
+        }
+        else {
+            var sEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+            if (!sEmail.exec(email)) {
+                document.getElementById("UserEmailMsg").innerHTML = "邮箱格式不正确";
+                allow4 = 1;
+            }
+            else {
+                ajax("/CheckEmail.ashx?Email=" + email, function (resText) {
+                    if (resText == "ok") {
+                        document.getElementById("UserEmailMsg").innerHTML = "邮箱可用";
+                        allow4 = 0;
+                    }
+                    else if (resText == "error") {
+                        document.getElementById("UserEmailMsg").innerHTML = "此邮箱已经被注册";
+                        allow4 = 1;
+                    }
+                    else {
+                        alert("服务器返回意外内容：" + resText);
+                        allow4 = 1;
+                    }
+                });
+            }
+        }
+    }
+    function checkRealName() {
+        var realName = document.getElementById("RealName").value;
+        realName = realName.trim();
+        if (realName == "") {
+            document.getElementById("UserRealMsg").innerHTML = "用户名不能为空";
+            allow5 = 1;
+        }
+        else {
+            document.getElementById("UserRealMsg").innerHTML = "";
+            allow5 = 0;
+        }
+    }
+    function checkall() {
+        checkUserName();
+        checkPassword();
+        checkPasswordOK();
+        checkRealName();
+        checkEmail();
+        if (allow1 == 0 && allow2 == 0 && allow3 == 0 && allow4 == 0 && allow5 == 0) {
+            return true;
+        }
+        else {
+            return false; 
+        }
+    } 
+</script>
+#parse("ExampleHead2.htm")
+<div id="main">
+    <div id="mleft">
+        <embed src="/Movie/形象.swf" style="width:100%; height:70%;"></embed>
+    </div>
+    <div id="mright">
+        <form action="/UserRegister.ashx" onsubmit="return checkall()">
+            <input type="hidden" name="UserReg" value="0"/>
+            <table align="center" border="0" style="font-family: 幼圆; font-weight: bold;padding-top:70px; width:100%;">  
+                <tr>
+                    <td width="80px"><font size="3">用户名:</font></td>
+                    <td align="left">
+                        <input type="text" style="height:25px;width:180px;" id="txtUsername" name="userName" onblur="checkUserName()" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"  />
+                        <span id="UserNameMsg" style="color:Red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="left">
+                        <span style="color:#bbb; font-size:16px;">* 4-20个字符，仅限字母和数字</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><font size="3">密码:</font></td>
+                    <td align="left">
+                        <input  type="password" style="height:25px;width:180px;" id="txtPassword" name="userpwd" onblur="checkPassword()" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"  />
+                        <span id="UserPwdMsg" style="color:Red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="left">
+                        <span style="color:#bbb; font-size:16px;">* 密码为英文字母与数字的组合，长度在4到20位之间</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><font size="3">确认密码:</font></td>
+                    <td align="left">
+                        <input type="password" style="height:25px;width:180px;" id="userpwdok" name="userpwdok" onblur="checkPasswordOK()" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"  />
+                        <span id="UserPwdOKMsg" style="color:Red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="left">
+                        <span style="color:#bbb; font-size:16px;">* 请再次输入登陆密码</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><font size="3">邮箱:</font></td>
+                    <td align="left">
+                        <input type="text" style="height:25px;width:180px;" id="email" name="email" onblur="checkEmail()"/>
+                        <span id="UserEmailMsg" style="color:Red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="left">
+                        <span style="color:#bbb; font-size:16px;">* 请填写真实有效的邮箱，用来激活账号</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><font size="3">性别:</font></td>
+                    <td align="left">
+                        <input type="radio" checked="checked" value="Man" name="sex" />
+                        <font size="3">男</font>&nbsp;
+                        <input type="radio" value="Wan" name="sex" />
+                        <font size="3">女</font>
+                        <span id="Span3" style="color:Red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="left">
+                        <span style="color:#bbb; font-size:16px;">* 请选择性别</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><font size="3">真实姓名:</font></td>
+                    <td align="left">
+                        <input type="text" style="height:25px;width:180px;" id="RealName" name="RealName" onblur="checkRealName()" />  
+                        <span id="UserRealMsg" style="color:Red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="left">
+                        <span style="color:#bbb; font-size:16px;">* 请填写真实的姓名</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="left">
+                        <input style="height:38px; width:100px; background-color:Orange; border:1px solid Red; font-family:幼圆; font-weight:bold;" type="submit" value="注册" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+#parse("ExampleFoot.htm")

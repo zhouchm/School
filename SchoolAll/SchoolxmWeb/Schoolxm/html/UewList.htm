@@ -1,0 +1,18 @@
+﻿#parse("ExampleHead1.htm")
+#parse("ExampleHead2.htm")
+<div id="main">
+    <table border="0" style="font-family: 幼圆; font-weight: bold; padding: 0px; text-align:center;height:30px;width:1000px;">
+        #foreach($p in $Model.ne)
+            <tr>
+                <td align="left"><a style="text-decoration: none;"href="/UNew.ashx?time=$p.time" >$p.title</a></td> 
+                <td align="right">$p.time</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr size="1" color="blue" align="center" style="margin-left: 0px; width: 990px;" />
+                </td>
+            </tr>
+        #end
+    </table>
+</div>
+#parse("ExampleFoot.htm")

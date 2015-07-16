@@ -1,0 +1,97 @@
+﻿#parse("ExampleHeadUp1.htm")
+<style type="text/css">
+    #mytable
+    {
+        font-family: 幼圆; 
+        font-weight: bold; 
+        width: 100%; 
+        padding-top:120px;
+        }
+    #mytable tr
+    {
+        height:45px;
+        }
+    #mytable input
+    {
+        height:30px;
+        width:180px;
+        }
+    #mysubmit,#mybutton
+    {
+        background-color:Orange; 
+        border:1px solid Red; 
+        font-family:幼圆; 
+        font-weight:bold;
+        }
+</style>
+<script type="text/javascript">
+    var allow = 1;
+    function checkScenceName() {
+        var ScenceName = document.getElementById("ScenceName").value;
+        ScenceName = ScenceName.trim();
+        if (ScenceName.length <= 0) {
+            document.getElementById("ScenceNameMsg").innerHTML = "场景名称不能为空";
+            document.getElementById("ScenceName").focus();
+            allow = 0;
+        }
+        else {
+            document.getElementById("ScenceNameMsg").innerHTML = "";
+            allow = 1;
+        }
+    }
+    function checkall() {
+        checkScenceName();
+        if (allow == 1) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    function add() {
+        window.location.href = "/ScenceDeviceList.ashx?SceId=$Model.Scence.SceId";
+    }
+</script>
+#parse("ExampleHeadUp2.htm")
+您好,$Model.Name
+#parse("ExampleHeadDown.htm")
+<div id="main">
+    <div id="mleft">
+        <embed src="/Movie/形象.swf" style="width:100%; height:70%;"></embed>
+    </div>
+    <div id="mright">
+        <form action="/ScenceEdit.ashx" onsubmit="return checkall()">
+            <input type="hidden" name="Action" value="$Model.Action" />
+            <table border="0" id="mytable"> 
+                <tr>
+                    <td width="100px">场景号</td>
+                    <td align="left">
+                        <input type="text" id="SceId" name="SceId" value="$Model.Scence.SceId" readonly="readonly"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>场景名</td>
+                    <td align="left">
+                        <input type="text" id="ScenceName" name="ScenceName" value="$Model.Scence.ScenceName" onblur="checkScenceName()"/>
+                        <span id="ScenceNameMsg" style="color:Red"></span> 
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="left">
+                        <input id="mysubmit" style="height:38px; width:180px;" type="submit" value="确认更新" />                 
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <table border="0" style="width: 100%;"> 
+            <tr>
+                <td width="100px"></td>
+                <td align="left">
+                    <input id="mybutton" type="button" style="width:180px;height:38px;" name="add" value="增加场景设备" onclick="add()" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+#parse("ExampleFoot.htm")

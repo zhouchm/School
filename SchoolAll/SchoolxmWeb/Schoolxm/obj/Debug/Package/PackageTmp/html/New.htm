@@ -1,0 +1,22 @@
+﻿#parse("ExampleHeadUp1.htm")
+#parse("ExampleHeadUp2.htm")
+您好,$Model.Name
+#parse("ExampleHeadDown.htm")
+<div id="main">
+    <table border="0" style="font-family: 幼圆; font-weight: bold; padding: 0px; text-align:center;height:30px;width:1000px;">
+        <tr >
+            <td align="left" bgcolor="#808080"  height="20%" valign="top">公告-详情</td>
+        </tr>
+        <tr>
+            <th align="center" height="80%">$Model.title</th>
+        </tr>
+        <tr align="right">
+            <td align="right" bgcolor="#808080" height="20%" valign="top">$Model.time</td>
+        </tr>
+    </table>
+    <hr size="1" color="blue" align="left" style="margin-left: 0px; width: 999;" />
+    <table border="0" style="font-family: 幼圆; font-weight: bold; padding: 2px; text-align:left;width:1000px;">
+        <tr align="left"><td class="style4">$Model.con</td></tr>
+    </table>
+</div>
+#parse("ExampleFoot.htm")

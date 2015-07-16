@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>添加管理员</title>
+    <script type="text/javascript" src="/js/ajax.js"></script>
+    <script type="text/javascript">
+        var allow = 0;
+        function checkEmail() {
+            allow = 0;
+            var email = document.getElementById("email").value;
+            if (email == "") {
+                document.getElementById("emailMsg").innerHTML = "邮箱不能为空";
+                document.getElementById("email").focus();
+                allow = 1;
+                return false;
+            }
+            else {
+                var sEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+                if (!sEmail.exec(email)) {
+                    document.getElementById("emailMsg").innerHTML = "邮箱格式不正确";
+                    document.getElementById("email").focus();
+                    allow = 1;
+                }
+                else {
+                    ajax("/CheckAdminEmail.ashx?Email=" + email, function (resText) {
+                        if (resText == "ok") {
+                            document.getElementById("emailMsg").innerHTML = "邮箱可用";
+                            allow = 0;
+                        }
+                        else if (resText == "error") {
+                            document.getElementById("emailMsg").innerHTML = "此邮箱已经被注册";
+                            document.getElementById("email").focus();
+                            allow = 1;
+                        }
+                        else {
+                            alert("服务器返回意外内容：" + resText);
+                        }
+                    });
+                }
+            }
+        }
+        function checkUserName() {
+            allow = 0;
+            var userName = document.getElementById("UserName").value;
+            if (userName == "") {
+                document.getElementById("UserNameMsg").innerHTML = "用户名不能为空";
+                document.getElementById("UserName").focus();
+                allow = 1;
+                return false;
+            }
+            else {
+                ajax("/CheckAdminUserName.ashx?UserName=" + userName, function (resText) {
+                    if (resText == "ok") {
+                        document.getElementById("UserNameMsg").innerHTML = "用户名可用";
+                        allow = 0;
+                    }
+                    else if (resText == "error") {
+                        document.getElementById("UserNameMsg").innerHTML = "此用户名已经被注册";
+                        document.getElementById("UserName").focus();
+                        allow = 1;
+                    }
+                    else {
+                        alert("服务器返回意外内容：" + resText);
+                    }
+                });
+            }
+        }
+        function checkRealName() {
+            allow = 0;
+            var realName = document.getElementById("RealName").value;
+            if (realName == "") {
+                document.getElementById("RealNameMsg").innerHTML = "真实姓名不能为空";
+                document.getElementById("RealName").focus();
+                allow = 1;
+                return false;
+            }
+            else {
+                document.getElementById("RealNameMsg").innerHTML = "";
+                allow = 0;
+            }
+        }
+        function checkAddress() {
+            allow = 0;
+            var address = document.getElementById("address").value;
+            if (address == "") {
+                document.getElementById("addressMsg").innerHTML = "地址不能为空";
+                document.getElementById("address").focus();
+                allow = 1;
+                return false;
+            }
+            else {
+                document.getElementById("addressMsg").innerHTML = "";
+                allow = 0;
+            }
+        }
+        function checkall() {
+            if (allow == 1) {
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="/AdminAdd.ashx" onsubmit="checkall()">
+        <input type="hidden" name="Action" value="add" />
+        <table>
+            <tr>
+                <td align="right">用户名</td>
+                <td><input type="text" id="UserName" name="UserName" onblur="checkUserName()" /></td>
+                <td><span id="UserNameMsg" style="color:Red"></span></td>
+            </tr>
+            <tr>
+                <td>真实姓名</td>
+                <td><input  type="text"  id="RealName" name="RealName" onblur="checkRealName()" /></td>
+                <td><span id="RealNameMsg" style="color:Red"></span></td>
+            </tr>
+            <tr>
+                <td align="right">邮箱</td>
+                <td><input type="text" id="email" name="email" onblur="checkEmail()"/></td>
+                <td><span id="emailMsg" style="color:Red"></span></td>
+            </tr>
+            <tr>
+                <td align="right">地址</td>
+                <td><input type="text" id="address" name="address" onblur="checkAddress()"/></td>
+                <td><span id="addressMsg" style="color:Red"></span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="add" value="确认添加" /></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

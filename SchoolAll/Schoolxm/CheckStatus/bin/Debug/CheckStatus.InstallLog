@@ -1,0 +1,34 @@
+﻿正在安装程序集“C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\CheckStatus\bin\Debug\CheckStatus.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\CheckStatus\bin\Debug\CheckStatus.exe
+   logfile = C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\CheckStatus\bin\Debug\CheckStatus.InstallLog
+正在安装服务 CheckStatus...
+已成功安装服务 CheckStatus。
+正在日志 Application 中创建 EventLog 源 CheckStatus...
+正在提交程序集“C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\CheckStatus\bin\Debug\CheckStatus.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\CheckStatus\bin\Debug\CheckStatus.exe
+   logfile = C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\CheckStatus\bin\Debug\CheckStatus.InstallLog
+正在卸载程序集“C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\CheckStatus\bin\Debug\CheckStatus.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\CheckStatus\bin\Debug\CheckStatus.exe
+   logfile = C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\CheckStatus\bin\Debug\CheckStatus.InstallLog
+正在移除 EventLog 源 CheckStatus。
+正在从系统中移除服务 CheckStatus...
+已成功地从系统中移除服务 CheckStatus。
+正在安装程序集“C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\CheckStatus\bin\Debug\CheckStatus.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\CheckStatus\bin\Debug\CheckStatus.exe
+   logfile = C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\CheckStatus\bin\Debug\CheckStatus.InstallLog
+正在安装服务 CheckStatus...
+已成功安装服务 CheckStatus。
+正在日志 Application 中创建 EventLog 源 CheckStatus...
+正在提交程序集“C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\CheckStatus\bin\Debug\CheckStatus.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\CheckStatus\bin\Debug\CheckStatus.exe
+   logfile = C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\CheckStatus\bin\Debug\CheckStatus.InstallLog

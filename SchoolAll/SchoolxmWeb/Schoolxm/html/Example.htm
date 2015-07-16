@@ -1,0 +1,92 @@
+﻿#parse("ExampleHead.htm")
+    <div id="main_u">
+        <div id="muleft">
+
+            <table border="0" style="font-family: 幼圆; font-weight: bold; padding: 2px; text-align:left;height:350px;width:596px;">
+                <tr>
+                    <th align="left">
+                        <img src="/Images/order.png" alt="" /><hr/>
+                    </th>
+                </tr>
+                <tr>
+                    <td>开放时间<br/>星期一至星期五&nbsp;开馆时间：09:00-17:00<hr/></td>
+                </tr>
+                <tr>
+                    <td>票务信息<br/>免费<hr/></td>
+                </tr>
+                <tr>
+                    <td>个人预约<br/>闭馆<hr/></td>
+                </tr>
+                <tr>
+                    <td>团体预约<br/>闭馆<hr/></td>
+                </tr>
+                <tr>
+                    <td>预约助手<br/>闭馆<hr/></td>
+                </tr>
+            </table>
+
+        </div>
+      	<div id="muright">
+		    
+            <table border="0" style="font-family: 幼圆; font-weight: bold; padding: 2px; text-align:left;height:350px;width:400px;">
+                <tr>
+                    <th align="left">
+                        <img src="/Images/news.png" alt="" /><hr/>
+                    </th>
+                    <th align="right">
+                        更多>
+                    </th>
+                </tr>
+                #foreach($n in $Model.News)
+                    <tr>
+                        <td colspan="2">$n.title<br/>$n.time<hr/></td>
+                    </tr>
+                #end
+            </table>
+
+		</div>
+	</div>
+    <div id="main_m">
+        <div id="mmleft">
+
+        	<div id="images">
+                <img id="image1" src="/Images/1.jpg" alt="" />
+                <img id="image2" src="/Images/2.jpg" alt="" />
+                <img id="image3" src="/Images/3.jpg" alt="" />
+                <img id="image4" src="/Images/4.jpg" alt="" />
+                <div id="slider" style="z-index:100;position:absolute;padding-top:200px;">
+                    <a href="#image1">1</a>
+                    <a href="#image2">2</a>
+                    <a href="#image3">3</a>
+                    <a href="#image4">4</a>
+                </div>
+            </div>
+            <div>
+                <img src="/Images/picture.jpg" alt="" height="35px"  width="380px" />
+            </div>
+
+        </div>
+      	<div id="mmright">
+
+            <div id="mmrleft"></div>
+            <div id="mmrright">
+            <table border="0">
+                <tr>
+                    <td align="left"><img src="/Images/movie.png" alt="" height="30px" width="60px" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <object id="player" height="250px" width="590px" classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6">  
+                            <param name="URL" value="/Movie/movie.mp4" /> 
+                            <param name="autostart" value="1" />     
+                            <param name="playcount" value="3" /> 
+                            <param name="uiMode" value="none" /> 
+                        </object>
+                    </td>
+                </tr>
+            </table>
+            </div>
+
+        </div>
+    </div>
+#parse("ExampleFoot.htm")

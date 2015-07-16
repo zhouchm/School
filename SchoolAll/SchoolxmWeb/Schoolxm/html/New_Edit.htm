@@ -1,0 +1,72 @@
+﻿#parse("ExampleHeadUp1.htm")
+<script type="text/javascript">
+    var allow1 = 0;
+    var allow2 = 0;
+    function CheckNewsName() {
+        allow1 = 0;
+        var NewsName = document.getElementById("NewsName").value;
+        NewsName = NewsName.trim();
+        if (NewsName == "") {
+            document.getElementById("NewsNameMsg").innerHTML = "标题不能为空";
+            allow1 = 0;
+        }
+        else {
+            document.getElementById("NewsNameMsg").innerHTML = "";
+            allow1 = 1;
+        }
+    }
+    function CheckNewContext() {
+        allow2 = 0;
+        var NewContext = document.getElementById("NewContext").value;
+        NewContext = NewContext.trim();
+        if (NewContext == "") {
+            document.getElementById("NewContextMsg").innerHTML = "内容不能为空";
+            allow2 = 0;
+        }
+        else {
+            document.getElementById("NewContextMsg").innerHTML = "";
+            allow2 = 1;
+        }
+    }
+    function checkall() {
+        if (allow1 == 1 && allow2 == 1) {
+            return true;
+        }
+        else {
+            return false; 
+        }
+    }
+</script>
+#parse("ExampleHeadUp2.htm")
+您好,$Model.Name
+#parse("ExampleHeadDown.htm")
+<div id="main">
+    <div id="mleft">
+        <embed src="/Movie/形象.swf" style="width:100%; height:70%;"></embed>
+    </div>
+    <div id="mright">
+        <form action="/AdminAddMessage.ashx" onsubmit="return checkall()">
+            <input type="hidden" name="Action" value="New_Update" />
+            <input type="hidden" name="time" value="$Model.time" />
+            <table border="0" style="width:100%; margin-top:50px;">
+                <tr>
+                    <td style="width:60px; font-family:幼圆; font-size:18px; font-weight:bold;">标题</td>
+                    <td align="left"><input type="text" style="width:320px;" id="NewsName" name="NewsName" onblur="CheckNewsName()" value="$Model.title" /></td>
+                    <td align="left"><span id="NewsNameMsg" style="color:Red"></span></td>
+                </tr>
+                <tr>
+            
+                    <td valign="top" style="width:60px; font-family:幼圆; font-size:18px; font-weight:bold;">内容</td>   
+                    <td align="left"><textarea name="NewContext" style="width:320px; height:400px;" id="NewContext" onblur="CheckNewContext()">$Model.str</textarea></td> 
+                    <td valign="top" align="left"><span id="NewContextMsg" style="color:Red"></span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="left"><input type="submit" style="width:100px; height:40px; background-color:Orange; border:1px solid Red; font-family:幼圆; font-weight:bold;" value="确认更新" /></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+#parse("ExampleFoot.htm")

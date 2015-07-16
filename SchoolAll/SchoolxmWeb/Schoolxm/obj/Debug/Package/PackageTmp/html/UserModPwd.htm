@@ -1,0 +1,110 @@
+﻿#parse("ExampleHead1.htm")
+<script type="text/javascript" src="/js/ajax.js"></script>
+<script type="text/javascript">
+    var allow1 = 0;
+    var allow2 = 0;
+    var allow3 = 0;
+    function checkOldPwd() {
+        var userPwd = document.getElementById("OldPassword").value;
+        userPwd = userPwd.trim();
+        if (userPwd == "") {
+            document.getElementById("UserPwdMsg").innerHTML = "原密码不能为空";
+            allow1 = 0;
+        }
+        else {
+            ajax("/CheckUserPwd.ashx?UserName=" + "$Model.Name" + "&PassWord=" + userPwd, function (resText) {
+                if (resText == "ok") {
+                    document.getElementById("UserPwdMsg").innerHTML = "";
+                    allow1 = 1;
+                }
+                else if (resText == "error") {
+                    document.getElementById("UserPwdMsg").innerHTML = "原密码错误";
+                    allow1 = 0;
+                }
+                else {
+                    alert("服务器返回意外内容：" + resText);
+                    allow1 = 0;
+                }
+            });
+        }
+    }
+    function checkNewPwd() {
+        var password = document.getElementById("NewPassword").value;
+        password = password.trim();
+        if (password == "") {
+            document.getElementById("Span1").innerHTML = "新密码不能为空";
+            allow2 = 0;
+        }
+        else {
+            if (password.length < 4 || password.length > 20) {
+                document.getElementById("Span1").innerHTML = "新密码长度为4到20位";
+                allow2 = 1;
+            }
+            else 
+            {
+                document.getElementById("Span1").innerHTML = "";
+                allow2 = 1;
+            }    
+        }
+    }
+    function checkPasswordOK() {
+        var password = document.getElementById("NewPassword").value;
+        var passwordok = document.getElementById("userpwdok").value;
+        passwordok = passwordok.trim();
+        if (passwordok == "") {
+            document.getElementById("UserPwdOKMsg").innerHTML = "确认密码不能为空";
+            allow3 = 0;
+        }
+        else {
+            if (password != passwordok) {
+                document.getElementById("UserPwdOKMsg").innerHTML = "两次密码不一致";
+                allow3 = 0;
+            }
+            else {
+                document.getElementById("UserPwdOKMsg").innerHTML = "";
+                allow3 = 1;
+            }
+        }
+    }
+    function checkall() {
+        checkOldPwd();
+        checkNewPwd();
+        checkPasswordOK();
+        if (allow1 == 1 && allow2 == 1 && allow3 == 1) {
+            return true;
+        }
+        else {
+            return false; 
+        }
+    }
+</script>
+#parse("ExampleHead2.htm")
+<div id="main">
+    <div id="mleft">
+        <embed src="/Movie/形象.swf" style="width:100%; height:70%;"></embed>
+    </div>
+    <div id="mright">
+        <form action="/UserEdit.ashx" onsubmit="return checkall()">
+            <input type="hidden" name="Action" value="User_pwd" />
+            <table align="center" border="0" style="font-family: 幼圆; font-weight: bold;padding-top:120px; width:100%;">  
+                <tr>
+                    <td width="100px">输入旧密码</td>
+                    <td align="left"><input type="password" style="height:25px;width:180px;" id="OldPassword" name="userOldpwd" onblur="checkOldPwd()" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" /><font color="red">*</font><span id="UserPwdMsg" style="color:Red"></span></li></td>
+                </tr>
+                <tr>
+                    <td>输入新密码</td>
+                    <td align="left"><input type="password" style="height:25px;width:180px;" id="NewPassword" name="userNewpwd" onblur="checkNewPwd()" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" /><font color="red">*</font><span id="Span1" style="color:Red"></span></li></td>
+                </tr>
+                <tr>
+                    <td>确认新密码</td>
+                    <td align="left"><input type="password" style="height:25px;width:180px;" id="userpwdok" name="userpwdok" onblur="checkPasswordOK()" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" /><font color="red">*</font><span id="UserPwdOKMsg" style="color:Red"></span></li></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="left"><input style="height:38px; width:100px; background-color:Orange; border:1px solid Red; font-family:幼圆; font-weight:bold;" type="submit" value="修改密码" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+#parse("ExampleFoot.htm")

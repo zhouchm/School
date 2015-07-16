@@ -1,0 +1,147 @@
+﻿#parse("ExampleHeadUp1.htm")
+<script type="text/javascript" src="/js/ajax.js"></script>
+<script type="text/javascript">
+    var allow1 = 1;
+    var allow2 = 1;
+    var allow3 = 1;
+    function checkEmail() {
+        var email = document.getElementById("email").value;
+        email = email.trim();
+        if (email.length <= 0) {
+            document.getElementById("emailMsg").innerHTML = "邮箱不能为空";
+            allow = 0;
+        }
+        else {
+            var sEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+            if (!sEmail.exec(email)) {
+                document.getElementById("emailMsg").innerHTML = "邮箱格式不正确";
+                allow = 0;
+            }
+            else {
+                ajax("/CheckAdminEmail.ashx?Email=" + email, function (resText) {
+                    if (resText == "ok") {
+                        document.getElementById("emailMsg").innerHTML = "邮箱可用";
+                        allow = 1;
+                    }
+                    else if (resText == "error") {
+                        document.getElementById("emailMsg").innerHTML = "此邮箱已经被注册";
+                        allow = 0;
+                    }
+                    else {
+                        alert("服务器返回意外内容：" + resText);
+                        allow = 0;
+                    }
+                });
+            }
+        }
+    }
+    function checkRealName() {
+        var realName = document.getElementById("RealName").value;
+        realName = realName.trim();
+        if (realName.length <= 0) {
+            document.getElementById("RealNameMsg").innerHTML = "真实姓名不能为空";
+            allow2 = 0;
+        }
+        else {
+            document.getElementById("RealNameMsg").innerHTML = "";
+            allow2 = 1;
+        }
+    }
+    function checkAddress() {
+        var address = document.getElementById("address").value;
+        address = address.trim();
+        if (address.length <= 0) {
+            document.getElementById("addressMsg").innerHTML = "地址不能为空";
+            allow3 = 0;
+        }
+        else {
+            document.getElementById("addressMsg").innerHTML = "";
+            allow3 = 1;
+        }
+    }
+    function checkall() {
+        checkEmail();
+        checkRealName();
+        checkAddress();
+        if (allow1 == 1 && allow2 == 1 && allow3 == 1) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+</script>
+<style type="text/css">
+    #mytable
+    {
+        font-family: 幼圆; 
+        font-weight: bold; 
+        width: 100%; 
+        padding-top:100px;
+        }
+    #mytable tr
+    {
+        height:45px;
+        }
+    #mytable input
+    {
+        height:30px;
+        width:180px;
+        }
+    #mysubmit
+    {
+        background-color:Orange; 
+        border:1px solid Red; 
+        font-family:幼圆; 
+        font-weight:bold;
+        }
+</style>
+#parse("ExampleHeadUp2.htm")
+您好,$Model.Name
+#parse("ExampleHeadDown.htm")
+<div id="main">
+    <div id="mleft">
+        <embed src="/Movie/形象.swf" style="width:100%; height:70%;"></embed>
+    </div>
+    <div id="mright">
+        <form action="/AdminEdit.ashx" onsubmit="return checkall()">
+            <input type="hidden" name="Action" value="$Model.Action" />
+            <table border="0" id="mytable"> 
+                <tr>
+                    <td width="80px">用户名</td>
+                    <td align="left">
+                        <input type="text" id="UserName" name="UserName" value="$Model.admin.UserName" readonly="readonly"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>真实姓名</td>
+                    <td align="left">
+                        <input type="text" id="RealName" name="RealName" value="$Model.admin.RealName" onblur="checkRealName()" />
+                        <span id="RealNameMsg" style="color:Red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>邮箱</td>
+                    <td align="left">
+                        <input type="text" id="email" name="email" value="$Model.admin.email" onblur="checkEmail()"/>
+                        <span id="emailMsg" style="color:Red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>地址</td>
+                    <td align="left">
+                        <input type="text" id="address" name="address" value="$Model.admin.address" onblur="checkAddress()"/>
+                        <span id="addressMsg" style="color:Red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="left">
+                        <input id="mysubmit" style="height:38px; width:100px;" type="submit" value="确认更新" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+#parse("ExampleFoot.htm")

@@ -1,0 +1,113 @@
+﻿#parse("ExampleHead1.htm")
+<style type="text/css">
+a:link
+{
+text-decoration:none;
+color:black;
+}
+a:visited{
+text-decoration:none;
+color:black;
+}
+a:hover
+{
+text-decoration:none;
+color:red;
+}
+a:active{
+text-decoration:underline;
+color:orange;
+}
+</style>
+#parse("ExampleHead2.htm")
+<div id="main">
+<div id="main_u">
+    <div id="muleft">
+
+        <table border="0" style="font-family: 幼圆; font-weight: bold; padding: 2px; text-align:left;height:350px;width:596px;">
+            <tr>
+                <th align="left">
+                    <img src="/Images/order.png" alt="" /><hr/>
+                </th>
+            </tr>
+            <tr>
+                <td>开放时间<br />
+                    <br/>$Model.time(如有变动请看右侧通知)<hr/></td>
+            </tr>
+            <tr>
+                <td>会员权利<br />
+                    <br/>游客在注册成为会员后，系统自动生成二维码，凭此二维码游客可以参观体验中心，用户可以在个人信息里面查看自己的二维码，<hr/></td>
+            </tr>
+            <tr>
+                <td>个人预约<br />
+                    <br/>会员在参观前先预约，并请在预约时间段准时参观，若不在预约时间段内则无法参观.<hr/></td>
+            </tr>
+        </table>
+
+    </div>
+    <div id="muright">
+		    
+        <table border="0" style="font-family: 幼圆; font-weight: bold; padding: 2px; text-align:left;width:400px;">
+            <tr height="48px">
+                <td align="left">
+                    <img src="/Images/news.png"/><hr/>
+                </td>
+                <td align="right">
+                   <a href="/UNewList.ashx">更多</a>
+                </td>
+            </tr>
+            #foreach($n in $Model.News)
+                <tr valign="top">
+                    <td colspan="2"><a href="/UNew.ashx?time=$n.time">$n.title</a><hr/></td>
+                </tr>
+            #end
+        </table>
+
+	</div>
+</div>
+<div id="main_m">
+    <div id="mmleft">
+
+        <div id="images">
+            <img id="image1" src="/Images/1.jpg" alt="" />
+            <img id="image2" src="/Images/2.jpg" alt="" />
+            <img id="image3" src="/Images/3.jpg" alt="" />
+            <img id="image4" src="/Images/4.jpg" alt="" />
+            <div id="slider" style="z-index:100; position:relative; padding-top:202px; padding-left:250px;">
+                <a href="#image1">1</a>
+                <a href="#image2">2</a>
+                <a href="#image3">3</a>
+                <a href="#image4">4</a>
+            </div>
+        </div>
+        <div>
+            <img src="/Images/picture.jpg" alt="" height="35px"  width="380px" />
+        </div>
+
+    </div>
+    <div id="mmright">
+
+        <div id="mmrleft"></div>
+        <div id="mmrright">
+        <table border="0">
+            <tr>
+                <td align="left"><img src="/Images/movie.png" alt="" height="30px" width="60px" /><font id="sz"size="3" color="orange">视频正在缓冲...</font></td>
+            </tr>
+            <tr align="right">
+                <td>
+                    <object id="player" height="250px" width="580px" classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6">  
+                        <param name="URL" value="/Movie/体验馆导览.mp4" /> 
+                        <param name="autostart" value="1" />     
+                        <param name="playcount" value="3" /> 
+                        <param name="uiMode" value="none" /> 
+                    </object>
+                </td>
+            </tr>
+        </table>
+        </div>
+
+    </div>
+</div>
+</div>
+
+#parse("ExampleFoot.htm")

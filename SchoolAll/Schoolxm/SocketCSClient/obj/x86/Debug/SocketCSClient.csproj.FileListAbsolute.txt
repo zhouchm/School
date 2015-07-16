@@ -1,0 +1,40 @@
+F:\StudySoftware\VS2010\Schoolxm\SocketCSClient\bin\Debug\SocketCSClient.exe
+F:\StudySoftware\VS2010\Schoolxm\SocketCSClient\bin\Debug\SocketCSClient.pdb
+F:\StudySoftware\VS2010\Schoolxm\SocketCSClient\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\StudySoftware\VS2010\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.exe
+F:\StudySoftware\VS2010\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.pdb
+H:\Schoolxm\SocketCSClient\bin\Debug\SocketCSClient.exe
+H:\Schoolxm\SocketCSClient\bin\Debug\SocketCSClient.pdb
+H:\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.exe
+H:\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.pdb
+C:\Users\稳定\Documents\Tencent Files\345151175\FileRecv\Schoolxm\SocketCSClient\bin\Debug\SocketCSClient.exe
+C:\Users\稳定\Documents\Tencent Files\345151175\FileRecv\Schoolxm\SocketCSClient\bin\Debug\SocketCSClient.pdb
+C:\Users\稳定\Documents\Tencent Files\345151175\FileRecv\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.exe
+C:\Users\稳定\Documents\Tencent Files\345151175\FileRecv\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.pdb
+C:\Users\稳定\Documents\Tencent Files\345151175\FileRecv\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Schoolxm\SocketCSClient\bin\Debug\SocketCSClient.exe
+C:\Users\Administrator\Desktop\Schoolxm\SocketCSClient\bin\Debug\SocketCSClient.pdb
+C:\Users\Administrator\Desktop\Schoolxm\SocketCSClient\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.exe
+C:\Users\Administrator\Desktop\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.pdb
+C:\Users\wanghe\Desktop\Schoolxm\SocketCSClient\bin\Debug\SocketCSClient.exe
+C:\Users\wanghe\Desktop\Schoolxm\SocketCSClient\bin\Debug\SocketCSClient.pdb
+C:\Users\wanghe\Desktop\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.csprojResolveAssemblyReference.cache
+C:\Users\wanghe\Desktop\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.exe
+C:\Users\wanghe\Desktop\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.pdb
+F:\Schoolxm\SocketCSClient\bin\Debug\SocketCSClient.exe
+F:\Schoolxm\SocketCSClient\bin\Debug\SocketCSClient.pdb
+F:\Schoolxm\SocketCSClient\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.exe
+F:\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.pdb
+C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\SocketCSClient\bin\Debug\SocketCSClient.exe
+C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\SocketCSClient\bin\Debug\SocketCSClient.pdb
+C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\SocketCSClient\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.exe
+C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.pdb
+H:\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.csprojResolveAssemblyReference.cache
+C:\Users\稳定\Desktop\Schoolxm\SocketCSClient\bin\Debug\SocketCSClient.exe
+C:\Users\稳定\Desktop\Schoolxm\SocketCSClient\bin\Debug\SocketCSClient.pdb
+C:\Users\稳定\Desktop\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.csprojResolveAssemblyReference.cache
+C:\Users\稳定\Desktop\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.exe
+C:\Users\稳定\Desktop\Schoolxm\SocketCSClient\obj\x86\Debug\SocketCSClient.pdb

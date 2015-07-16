@@ -1,0 +1,511 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>主题内容</title>
+<style type="text/css">
+
+*{margin:0; padding:0;}
+body{ font-size:14px; font-family:"宋体";}
+h1, h2, h3{ font-size:14px; font-weight:normal;}
+li{ list-style:none;}
+a{ color:#333; text-decoration:none;}
+#nav{ width:140px; height:35px; background:#C00; margin:20px 0 0 10px;}
+#nav h1{ padding-left:43px; line-height:35px; color:#fff; margin-right:17px;}
+#box{ width:138px; border:1px solid #B00; border-top:none; margin-left:10px; display:none;}
+#subnav{width:138px;}
+#subnav .list{ width:138px; height:30px;}
+#subnav .list h2{ width:100px; height:30px; padding-left:41px; line-height:30px; margin-right:10px;}
+#subnav .list a:hover, #subnav .active a:hover{ color:#900; font-weight:bold;}
+#subnav .active{ width:138px; height:30px; border-bottom:1px solid #b00; border-top:1px solid #b00; position:relative;}
+#subnav .active h2{ width:98px; height:30px; padding-left:41px; line-height:30px; background:#fff; position:absolute; left:1px; top:0; z-index:4;}
+#subnav .list_nav{ text-align:center;width:90px; overflow:hidden; border:1px solid #b00; position:absolute; left:138px; top:-1px; z-index:3; display:none;}
+</style>
+<script type="text/javascript">
+window.onload=function()
+{
+        var oNav=document.getElementById('nav');
+        var oBox=document.getElementById('box');
+        var oSubnav=document.getElementById('subnav');
+        var aLi=oSubnav.getElementsByTagName('li');
+        var i=0;
+        oNav.onclick=function()
+        {
+                if(oBox.style.display=='block')
+                {
+                        oBox.style.display='none';
+                }
+                else
+                {
+                        oBox.style.display='block';
+                }
+        }
+        for(i=0;i<aLi.length;i++)
+        {
+                if(aLi[i].className=='list')
+                {
+                        aLi[i].onmousemove=function()
+                        {
+                                for(i=0;i<aLi.length;i++)
+                                {
+                                        var aDivList=this.getElementsByTagName('div')[0];
+                                        aDivList.style.display='block';
+                                        this.className='active';
+                                }
+                        }
+                        aLi[i].onmouseout=function()
+                        {
+                                for(i=0;i<aLi.length;i++)
+                                {
+                                        var aDivList=this.getElementsByTagName('div')[0];
+                                        aDivList.style.display='none';
+                                        this.className='list';                
+                                }
+                        }
+                }
+        }
+};
+</script>
+<meta charset="UTF-8">
+	
+	<style type="text/css">
+	#menu{ 
+		width:960px; 
+		margin:100px auto;
+	}
+	#menu li{	
+		float:left;
+		width:280px;
+		height:288px;
+		margin-left:8px;
+		position:relative; 
+		overflow:hidden;
+	}
+	#menu li div{
+	position:absolute;
+	width:285px;
+	height:474px;
+	padding:10px;
+	text-align:center;
+	background: rgba(0,0,0, 1);
+	opacity: 0;
+		-webkit-transition: color 0.2s linear;
+		-moz-transition: color 0.2s linear;
+		-o-transition: color 0.2s linear;
+		-ms-transition: color 0.2s linear;
+	transition: color 0.2s linear;
+	left: -4px;
+	top: 433px;
+	}
+	#menu li:hover div{
+		background: rgba(0,0,0, 0.5); 
+		opacity: 1;
+		color:#ccc;
+	}
+	#menu li:first-child div,#menu li:nth-child(3) div{
+		-webkit-transition: top 0.4s ease-in-out, opacity 0.6s ease-in-out;
+		-moz-transition: top 0.4s ease-in-out, opacity 0.6s ease-in-out;
+		-o-transition: top 0.4s ease-in-out, opacity 0.6s ease-in-out;
+		-ms-transition: top 0.4s ease-in-out, opacity 0.6s ease-in-out;
+		transition: top 0.4s ease-in-out, opacity 0.6s ease-in-out;
+	}
+	#menu li:first-child div{
+		left:0; 
+		top:288px; 
+	}
+	#menu li:first-child:hover div,#menu li:nth-child(3):hover div{
+		top:0;
+	}
+	#menu li:nth-child(2) div,#menu li:last-child div{
+		-webkit-transition: left 0.4s ease-in-out, opacity 0.6s ease-in-out;
+		-moz-transition: left 0.4s ease-in-out, opacity 0.6s ease-in-out;
+		-o-transition: left 0.4s ease-in-out, opacity 0.6s ease-in-out;
+		-ms-transition: left 0.4s ease-in-out, opacity 0.6s ease-in-out;
+		transition: left 0.4s ease-in-out, opacity 0.6s ease-in-out;	
+	}
+	#menu li:nth-child(2) div{
+		left:-200px; 
+		top:0; 
+	}
+	#menu li:nth-child(2):hover div,#menu li:last-child:hover div{
+		left:0;
+	}
+	#menu li:nth-child(3) div{
+		left:0; 
+		top:-288px; 
+	}
+	
+	#menu li:last-child div{
+		left:200px; 
+		top:0; 
+	}
+	#menu h1{
+		font-size:16px; 
+		padding-top:60px;
+		font-weight:bold;
+	}
+	#menu p{
+		text-align:left;
+	}
+.STYLE2 {font-size: 9px; }
+#Layer1 {
+	position:absolute;
+	width:112px;
+	height:45px;
+	z-index:1;
+	left: 1127px;
+	top: 189px;
+}
+.STYLE4 {
+	font-size: 14px;
+	color: #6699FF;
+	font-weight: bold;
+}
+.STYLE5 {
+	color: #993366;
+	font-weight: bold;
+	font-size: 16px;
+}
+.STYLE6 {
+	font-size: 16px;
+	color: #000000;
+}
+.STYLE7 {
+	color: #996699;
+	font-weight: bold;
+}
+#Layer2 {
+	position:absolute;
+	width:803px;
+	height:238px;
+	z-index:4;
+	left: 309px;
+	top: 301px;
+}
+    #Layer3 {
+	position:absolute;
+	width:200px;
+	height:180px;
+	z-index:1;
+	top: 165px;
+	left: 707px;
+}
+    #Layer4 {
+	position:absolute;
+	width:552px;
+	height:94px;
+	z-index:4;
+	left: 420px;
+	top: 292px;
+}
+    #Layer5 {
+	position:absolute;
+	width:756px;
+	height:115px;
+	z-index:5;
+	left: 356px;
+	top: 393px;
+}
+    #Layer6 {
+	position:absolute;
+	width:332px;
+	height:143px;
+	z-index:5;
+	left: 39px;
+	top: 500px;
+	overflow: visible;
+}
+    #Layer7 {
+	position:absolute;
+	width:552px;
+	height:85px;
+	z-index:6;
+	left: 420px;
+	top: 429px;
+}
+    #Layer8 {
+	position:absolute;
+	width:305px;
+	height:225px;
+	z-index:7;
+	left: 903px;
+	top: 296px;
+}
+    #Layer9 {
+	position:absolute;
+	width:270px;
+	height:330px;
+	z-index:7;
+	left: 985px;
+	top: 290px;
+}
+    #Layer10 {
+	position:absolute;
+	width:554px;
+	height:75px;
+	z-index:8;
+	left: 402px;
+	top: 554px;
+}
+    </style>
+<!--
+body {
+	background-image: url();
+}
+#Layer1 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:1;
+}
+.STYLE1 {font-family: "宋体"}
+#Layer2 {
+	position:absolute;
+	width:74px;
+	height:33px;
+	z-index:1;
+	left: 1167px;
+	top: 186px;
+}
+-->
+</style>
+<script type="text/JavaScript">
+<!--
+function MM_displayStatusMsg(msgStr) { //v1.0
+  status=msgStr;
+  document.MM_returnValue = true;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_changeProp(objName,x,theProp,theValue) { //v6.0
+  var obj = MM_findObj(objName);
+  if (obj && (theProp.indexOf("style.")==-1 || obj.style)){
+    if (theValue == true || theValue == false)
+      eval("obj."+theProp+"="+theValue);
+    else eval("obj."+theProp+"='"+theValue+"'");
+  }
+}
+//-->
+</script>
+</head>
+
+<body topmargin=0 leftmargin=0>
+<center>
+<script language="JavaScript" type="text/javascript">
+
+function nowTime(format)
+{
+var dt=new Date();
+//年份
+this.Year=dt.getFullYear();
+//月份
+this.Month=dt.getMonth()+1;
+//日期
+this.Day=dt.getDate();
+//星期几,数字
+this.Week=dt.getDay();
+//星期几，中文
+this.WeekDay='日一二三四五六'.charAt(dt.getDay());
+//24制小时
+this.Hours24=dt.getHours();
+//12制小时
+this.Hours12=this.Hours24>12 ? this.Hours24 :this.Hours24-12;
+//分钟
+this.Minutes=dt.getMinutes();
+//秒
+this.Seconds=dt.getSeconds();
+format=format.replace("yy",this.Year);
+format=format.replace("MM",this.Month);
+format=format.replace("dd",this.Day);
+format=format.replace("HH",this.Hours24);
+format=format.replace("hh",this.Hours12);
+format=format.replace("mm",this.Minutes);
+format=format.replace("ss",this.Seconds);
+format=format.replace("ww",this.Week);
+format=format.replace("WW",this.WeekDay);
+//时间显示在页面中哪个标签里，这里是其id
+this.toShow=function (element)
+{
+  document.getElementById(element).innerHTML=format;
+}
+}
+</script>
+<table width="1233" height="702" border="0" align="center" cellspacing="0" background="/Images/body.jpg">
+<tr>
+  <td width="1000" height="204" align="left" valign="bottom"><img src="/Images/home.png" width="1230" height="215" vspace="0" />
+    <div id="Layer4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;体验中心在风格定位上，整个空间以裸露的结构造型（原始梁柱）面上水泥为主顶面刷黑，多媒体投影地面区域统一投影漆米白色系），两侧窗户窗框喷黑，配以白色遮光帘投影幕，功能空间上的划分大面积使用透明隔断（普通装饰玻璃，
+      通电玻璃，透明屏），配合极少的木隔断，简洁大气。建筑装饰语言中极具原始感粗糙的水泥表面，裸露的梁柱和现
+      代装饰风格玻璃材质木材质的碰撞产生强烈的对比，塑造出一个极其现代感的空间。  空间色彩上黑（顶面刷黑）白
+    （投影介质，局部横梁）灰（梁，柱，地面）的比例控制让空间的层次感凸显。</div>
+	<!--<p>
+	<div id="Layer9"><img src="/Images/shishitiiyan.png" width="274" height="327" /></div>
+	<p>-->
+      <script>
+(function(){
+  var o = document.getElementById("Layer4");
+  var s = o.innerHTML;
+  var p = document.createElement("span");
+  var n = document.createElement("a");
+  p.innerHTML = s.substring(0,120);
+  n.innerHTML = s.length > 120 ? "...展开" : "";
+  n.href = "###";
+  n.onclick = function(){
+    if (n.innerHTML == "...展开"){
+      n.innerHTML = "收起";
+      p.innerHTML = s;
+    }else{
+      n.innerHTML = "...展开";
+      p.innerHTML = s.substring(0,120);
+    }
+  }
+  o.innerHTML = "";
+  o.appendChild(p);
+  o.appendChild(n);
+})();
+    </script>
+  </tr>
+  
+
+  <tr>
+    <td height="397" align="right"><table width="1231" height="421" border="0" cellspacing="6">
+      <tr valign="top">
+        <td height="409"><p>
+          <font color=black>▲</font><span class="STYLE5"> 现代科技，创造寓教空间             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;体验教学，营造轻松氛围 &nbsp;&nbsp;&nbsp;</span> &nbsp;&nbsp;&nbsp;<span class="STYLE5">快乐学习，造就智慧人生          </span>
+          <p>          <font color=black><br>
+          <hr>
+          </font>
+		  <div id="nav">
+		    <h1>主题内容↓</h1>
+		  </div>
+<div id="box">
+        <ul id="subnav">
+                <li class="list">
+                        <h2><a href="yinxiangshiyan.html"">印象实验 </a></h2>
+                        <!--<div class="list_nav">
+                                <ul>
+                                        <li><a target="_blank" href="yinxiangshiyan.html#xuting" title="">序厅</a></li>
+                                        <li><a target="_blank" href="yinxiangshiyan.html#zhihuijingling" title="">智慧精灵</a></li>
+                                        <li><a target="_blank" href="yinxiangshiyan.html#tiyandaolan" title="">体验导览</a></li>
+                                        <li><a target="_blank" href="yinxiangshiyan.html#zhihuizhimen" title="">智慧之门</a></li>
+                                        <li><a target="_blank" href="yinxiangshiyan.html#shiyanlicheng" title="">实验历程</a></li>
+                                        <li><a target="_blank" href="yinxiangshiyan.html#shiyanfengcai" title="">实验风采</a></li>
+                                </ul>
+                        </div>-->
+                </li>
+                <li class="list">
+                        <h2><a href="kejiyujiao.html" target="_parent">科技寓教</a></h2>
+                        <!--<div class="list_nav">
+                                <ul>
+                                        <li><a target="_parent" href="kejiyujiao.html" >互动教学</a></li>
+                                        <li><a target="_parent" href="kejiyujiao.html">立体影院</a></li>
+                                        <li><a target="_parent" href="kejiyujiao.html">微型演讲</a></li>
+                                        <li><a target="_parent" href="kejiyujiao.html">校园监控</a></li>
+                                </ul>
+                        </div>-->
+                </li>
+                <li class="list">
+                        <h2><a href="lexuezhiyuan .html" target="_top">乐学致远</a></h2>
+                       <!-- <div class="list_nav">
+                                <ul>
+                                        <li><a target="_blank" href="lexuezhiyuan .html">智能绘画</a></li>
+                                        <li><a target="_blank" href="lexuezhiyuan .html">虚拟钢琴</a></li>
+                                        <li><a target="_blank" href="lexuezhiyuan .html">欢乐运动</a></li>
+                                        <li><a target="_blank" href="lexuezhiyuan .html">虚拟实验室</a></li>
+                                        <li><a target="_blank" href="lexuezhiyuan .html">趣味考场</a></li>
+                                        <li><a target="_blank" href="lexuezhiyuan .html">玩转化学</a></li>
+										<li><a target="_blank" href="tiyanhuigu.html">体验回顾</a></li>
+                                </ul>
+                        </div>-->
+                </li>
+                <li class="list">
+                        <h2><a href="/html/tyzxintroduce.htm">返回导览页</a></h2>
+                </li>
+        </ul>
+</div>
+          <p align="center" class="STYLE6">&nbsp;</p>
+
+	      </p>
+<p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <div id="Layer7">&nbsp;&nbsp;&nbsp;&nbsp;入口处左侧设有服务台，服务台上设有二维码扫描装置、手环读取设备及操作电脑，观众可提供网站上报名好的二维码进行扫描直接领取智能手环，也可通过右侧自动手环领取机现场输入个人基本信息自动领取智能手环。?在体验中心的入口处，设置一扇电动移门，通过投影投射不同的智慧精灵的动态演绎内容在全息膜（贴在移门玻璃上）上。但体验者走近移门时，即可看到门上面浮现出一个智慧精灵，他像体验中心的主人一样，热情地欢迎每位参观者。“您好！欢迎来到现代科技体验中心，开启智慧 体验之旅！”。</div>
+<p>
+  <script>
+(function(){
+  var o = document.getElementById("Layer7");
+  var s = o.innerHTML;
+  var p = document.createElement("span");
+  var n = document.createElement("a");
+  p.innerHTML = s.substring(0,100);
+  n.innerHTML = s.length > 100 ? "...展开" : "";
+  n.href = "###";
+  n.onclick = function(){
+    if (n.innerHTML == "...展开"){
+      n.innerHTML = "收起";
+      p.innerHTML = s;
+    }else{
+      n.innerHTML = "...展开";
+      p.innerHTML = s.substring(0,100);
+    }
+  }
+  o.innerHTML = "";
+  o.appendChild(p);
+  o.appendChild(n);
+})();
+  </script>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <blockquote>
+            <p>&nbsp;&nbsp;&nbsp;</p>
+            <div id="Layer6" ><img src="/Images/pingmian.png" name="m1" width="303" height="144" id="m1" onmousemove="MM_changeProp('m1','','height','156','IMG');MM_changeProp('m1','','width','330','IMG')" onmouseout="MM_changeProp('m1','','width','303','IMG');MM_changeProp('m1','','height','144','IMG')"  /></div>
+            <div id="Layer10"> &nbsp;&nbsp;&nbsp;&nbsp;当体验者在指定区域挥动手环时，屏幕上将实时显示与体验者及项目参与情况的“实时体验数据统计表”，包括体验者的“姓名、性别、年龄、VIP与否及实时参观人数”等实时体验数据分析；体验者将根据屏幕中的提示再次在指定区域挥动手环时，即可开始展项体验。 </div>
+			<p>
+  <script>
+(function(){
+  var o = document.getElementById("Layer10");
+  var s = o.innerHTML;
+  var p = document.createElement("span");
+  var n = document.createElement("a");
+  p.innerHTML = s.substring(0,80);
+  n.innerHTML = s.length > 80 ? "...展开" : "";
+  n.href = "###";
+  n.onclick = function(){
+    if (n.innerHTML == "...展开"){
+      n.innerHTML = "收起";
+      p.innerHTML = s;
+    }else{
+      n.innerHTML = "...展开";
+      p.innerHTML = s.substring(0,80);
+    }
+  }
+  o.innerHTML = "";
+  o.appendChild(p);
+  o.appendChild(n);
+})();
+  </script>
+          </blockquote>
+      </tr>
+    </table></td>
+  </tr>
+  <tr bgcolor="#006633">
+    <td width="1231" height="45" align="center" onmouseover="MM_displayStatusMsg('欢迎来到上海市实验学校体验中心');return document.MM_returnValue"><span class="STYLE3">
+    <marquee direction="left" width="100%">
+    <span class="STYLE7">欢迎来到上海市实验学校体验中心    </span>
+    <div id="timeshow">
+        <script language="JavaScript" type="text/javascript" defer="defer">
+  setInterval("new nowTime('当前时间：yy年MM月dd日 星期WW hh:mm:ss ').toShow('timeshow')",1000);
+      </script>
+      </div>
+      <table width="1231" border="0" cellspacing="6">
+</table>
+</center>
+</body>
+
+</html>

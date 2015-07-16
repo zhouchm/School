@@ -1,0 +1,66 @@
+﻿#parse("ExampleHeadUp1.htm")
+<style type="text/css">
+#main table{width:96%;margin:20px;font-family:幼圆;font-size:18px;}
+#myTable th{background:#e5f1f4;}
+#myTable td{background:#f8fbfc;}
+#myTable tr.even td{background:#e5f1f4;}
+#myTable tr.odd td{background:#f8fbfc;}
+#myTable tr.over td{background:#bce774;}
+#myTable tr.out td{}
+</style>
+<script type="text/javascript">
+    window.onload = function () {
+        var changeTr = document.getElementById("myTable").getElementsByTagName("tr");
+        for (i = 0; i < changeTr.length; i++) {
+            changeTr[i].className = (i % 2 > 0) ? "even" : "odd";
+            changeTr[i].temp = changeTr[i].className;
+            changeTr[i].onmouseover = function () {
+                this.className = 'over';
+            }
+            changeTr[i].onmouseout = function () {
+                this.className = this.temp;
+            }
+        }
+    };
+    function add() {
+        window.location.href = "AdminAddMessage.ashx?Action=Add";
+    }
+</script>
+#parse("ExampleHeadUp2.htm")
+您好,$Model.Name
+#parse("ExampleHeadDown.htm")
+<div id="main">
+<table id="myTable" border="1" cellpadding="10px" rules="rows">
+    <thead>
+        <tr>
+            <th align="left" width="80px">作者名</th>
+            <th align="left">标题</th>
+            <th align="left" width="80px">时间</th>
+            <th colspan="2" align="left" width="80px">用户操作</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td colspan="6" align="right">
+                <input type="button" style="width:100px; height:40px; background-color:Orange; border:1px solid Red; font-family:幼圆; font-weight:bold;" name="add" value="添加" onclick="add()" />
+            </td>
+        </tr>
+    </tfoot>
+    <tbody>
+        #foreach($p in $Model.ne)
+            <tr style="height:30px;">   
+                <td>$p.name</td>
+                <td><a href="/New.ashx?time=$p.time">$p.title</a></td>
+                <td>$p.time</td>
+                <td>
+                    <a href="/AdminAddMessage.ashx?Action=New_Edit&time=$p.time">编辑</a>
+                </td>
+                <td>
+                    <a href="/AdminAddMessage.ashx?Action=Delete&time=$p.time">删除</a>
+                </td>
+            </tr>
+        #end
+    </tbody>
+</table>
+</div>
+#parse("ExampleFoot.htm")

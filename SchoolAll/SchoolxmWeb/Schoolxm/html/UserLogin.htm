@@ -1,0 +1,85 @@
+﻿#parse("ExampleHead1.htm")
+<script type="text/javascript">
+    var allow1 = 0;
+    var allow2 = 0;
+    function checkUserName() {
+        var userName = document.getElementById("txtUsername").value;
+        if (userName.length == 0) {
+            document.getElementById("UserNameMsg").innerHTML = "用户名不能为空";
+            allow1 = 0;
+        }
+        else {
+            if (userName.length < 4 || userName.length > 20) {
+                document.getElementById("UserNameMsg").innerHTML = "用户名长度为4到20位";
+                allow1 = 0;
+            }
+            else{
+                document.getElementById("UserNameMsg").innerHTML = "";
+                allow1 = 1;
+            } 
+        }
+    }
+    function checkPassword() {
+        var password = document.getElementById("txtPassword").value;
+        if (password.length == 0) {
+            document.getElementById("UserPwdMsg").innerHTML = "密码不能为空";
+            allow2 = 0;
+        }
+        else {
+            if (password.length < 4 || password.length > 20) {
+                document.getElementById("UserPwdMsg").innerHTML = "密码长度为4到20位";
+                allow2 = 0;
+            }
+            else {
+                document.getElementById("UserPwdMsg").innerHTML = "";
+                allow2 = 1;
+            }             
+        }
+    }
+    function checkall() {
+        checkUserName();
+        checkPassword();
+        if (allow1 == 1 && allow2 == 1) {
+            return true;
+        }
+        else {
+            return false; 
+        }
+    }
+</script>
+#parse("ExampleHead2.htm")
+<div id="main">
+    <div id="mleft">
+        <embed src="/Movie/形象.swf" style="width:100%; height:70%;"></embed>
+    </div>
+    <div id="mright">
+        <form action="/UserLogin.ashx" onsubmit="return checkall()">
+            <input type="hidden" id="Action" name="Action" value="Login"/>
+            <table border="0" style="font-family: 幼圆; font-weight: bold; width: 100%; padding-top:120px;">  
+                <tr>
+                    <td></td>
+                    <td align="left"><span style="color:Red">$Model.Msg</span></td>
+                </tr>
+                <tr height="45px">
+                    <td><font size="3">用户名:</font></td>
+                    <td width="400px" align="left">
+                        <input type="text" style="height:28px;width:180px;" id="txtUsername" name="userName" onblur="checkUserName()" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" />
+					    <span id="UserNameMsg" style="color:Red"></span>
+                    </td>
+                </tr>
+                <tr height="45px">
+                    <td><font size="3">密&nbsp;&nbsp;码:</font></td>
+                    <td width="400px" align="left">
+                        <input type="password" style="height:28px;width:180px;" id="txtPassword" name="userpwd" onblur="checkPassword()" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" />
+					    <span id="UserPwdMsg" style="color:Red"></span>
+                    </td>
+                </tr>
+                <tr height="45px">
+                    <td></td>
+                    <td align="left"><input style="height:38px; width:100px; background-color:Orange; border:1px solid Red; font-family:幼圆; font-weight:bold;" type="submit" value="登录" /></td>
+                </tr>
+            </table>          
+        </form> 
+    </div>
+</div>
+#parse("ExampleFoot.htm")

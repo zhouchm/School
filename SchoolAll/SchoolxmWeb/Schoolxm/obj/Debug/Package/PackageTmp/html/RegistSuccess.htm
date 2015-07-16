@@ -1,0 +1,22 @@
+﻿#parse("ExampleHead1.htm")
+#parse("ExampleHead2.htm")
+<div id="main">
+    <div id="mleft">
+        <embed src="/Movie/形象.swf" style="width:100%; height:70%;"></embed>
+    </div>
+    <div id="mright">
+        <form action="/UserOrder.ashx">
+            <table align="center" border="0" style="font-family: 幼圆; width: 100%; font-weight: bold;padding-top:70px;">
+                <tr>
+                    <td>
+                        <img alt="$Model.userName" src="$Model.src" style="height: 380px; width: 380px" title="二维码" align="right" vspace="10" hspace="10">
+                        <p align="left">&nbsp;&nbsp;&nbsp;&nbsp;二维条码/二维码（2-dimensional bar code）是用某种特定的几何图形按一定规律在平面（二维方向上）分布的黑白相间的图形记录数据符号信息的；在代码编制上巧妙地利用构成计算机内部逻辑基础的“0”、“1”比特流的概念，使用若干个与二进制相对应的几何形体来表示文字数值信息，通过图象输入设备或光电扫描设备自动识读以实现信息自动处理：它具有条码技术的一些共性：每种码制有其特定的字符集；每个字符占有一定的宽度；具有一定的校验功能等。同时还具有对不同行的信息自动识别功能、及处理图形旋转变化点。</p>
+                        <p align="left">&nbsp;&nbsp;&nbsp;&nbsp;恭喜$Model.userName注册成功！请打印或者拍下你的二维码，在参观时向工作人员展示你的二维码。</p>
+                        <input style="height:38px; width:100px; background-color:Orange; border:1px solid Red; font-family:幼圆; font-weight:bold;" type="submit" value="个人预约" />
+                    </td>
+                </tr>
+            </table>   
+        </form>
+    </div>
+</div>
+#parse("ExampleFoot.htm")

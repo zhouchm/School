@@ -1,0 +1,103 @@
+﻿#parse("ExampleHeadUp1.htm")
+<script type="text/javascript">
+    allow = 0;
+    allow1 = 0;
+    function checkScenceName() {
+        var ScenceName = document.getElementById("ScenceName").value;
+        ScenceName = ScenceName.trim();
+        if (ScenceName.length <= 0) {
+            document.getElementById("ScenceNameMsg").innerHTML = "场景名不能为空";
+            allow = 0;
+        }
+        else {
+            document.getElementById("ScenceNameMsg").innerHTML = "";
+            allow = 1;
+        }
+    }
+    function checkScenceId() {
+        var SceId = document.getElementById("SceId").value;
+        SceId = SceId.trim();
+        if (SceId.length <= 0) {
+            document.getElementById("SceIdMsg").innerHTML = "场景名不能为空";
+            allow1 = 0;
+        }
+        else {
+            document.getElementById("SceIdMsg").innerHTML = "";
+            allow1 = 1;
+        }
+    }
+    function checkall() {
+        checkScenceName();
+        if (allow == 1) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+</script>
+<style type="text/css">
+    #mytable
+    {
+        font-family: 幼圆; 
+        font-weight: bold; 
+        width: 100%; 
+        padding-top:120px;
+        }
+    #mytable tr
+    {
+        height:45px;
+        }
+    #mytable input
+    {
+        height:30px;
+        width:180px;
+        }
+    #mysubmit
+    {
+        background-color:Orange; 
+        border:1px solid Red; 
+        font-family:幼圆; 
+        font-weight:bold;
+        }
+</style>
+#parse("ExampleHeadUp2.htm")
+您好,$Model.Name
+#parse("ExampleHeadDown.htm")
+<div id="main">
+    <div id="mleft">
+        <embed src="/Movie/形象.swf" style="width:100%; height:70%;"></embed>
+    </div>
+    <div id="mright">
+        <form action="/ScenceAdd.ashx" onsubmit="return checkall()">
+            <input type="hidden" name="Action" value="add" />
+            <table border="0" id="mytable"> 
+                <tr>
+                    <td width="80px"></td>
+                    <td align="left">
+                        <span id="Span1" style="color:Red">$Model.Msg</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="80px">场景编号</td>
+                    <td align="left">
+                        <input type="text" id="SceId" name="SceId" onblur="checkScenceId()" onKeyUp="this.value=this.value.replace(/[^\.\d]/g,'');this.value=this.value.replace('.','');" />
+                        <span id="SceIdMsg" style="color:Red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>场景名</td>
+                    <td align="left">
+                        <input  type="text" id="ScenceName" name="ScenceName" onblur="checkScenceName()" />
+                        <span id="ScenceNameMsg" style="color:Red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="left"><input id="mysubmit" style="height:38px; width:100px;" type="submit" value="确认添加" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+#parse("ExampleFoot.htm")

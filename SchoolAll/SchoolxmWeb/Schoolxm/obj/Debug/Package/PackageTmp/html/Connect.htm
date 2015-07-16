@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>现代科技体验中心</title>
+    <link rel="stylesheet" type="text/css" href="/css/UserCSS.css" />
+    <script type="text/javascript" src="/js/UserJS.js"></script>
+</head>
+<body>
+    <div id="header">
+    	<div id="hleft">
+
+            <table border="0">
+                <tr>
+                    <td align="left" width="80px"><img src="/Images/header.png" alt="" height="70px" width="70px" /></td>
+                    <td align="left" style="font-family: 幼圆; font-weight: bold;font-size: 18px;">
+                        <p>上海市实验学校<br/>SHANGHAI EXPERIMENT SCHOOL</p>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+      	<div id="hright">
+
+            <div style="font-family: 幼圆; font-weight: bold; padding-top: 4px; padding-right: 20px; text-align: right;">
+                $Model.str
+            </div>
+		    <div class="ullicss" style="font-family: 幼圆;">
+                <ul>
+                    <li>
+                        <a href="/Home.ashx" class="xialaguang"><span>首页</span></a>
+                    </li>
+                    <li>
+                        <a href="/UserOrder.ashx" class="xialaguang"><span>个人预约</span></a>
+                    </li>
+                    <li>
+                        <a href="/html/tyzxintroduce.htm" class="xialaguang"><span>展馆介绍</span></a>
+                    </li>
+                    <li onmouseover="show('id1')" onmouseout="shut('id1')">
+                        <a href="#" ><span>个人中心</span></a>
+                        <ul id="id1" style="display:none">
+            		        <li style="float: left"><a href="/UserModPwd.ashx"><span>修改密码</span></a></li>
+            		        <li><a href="/UserEdit.ashx?Action=user_edit"><span>个人信息</span></a></li>
+            	        </ul>
+                    </li>
+                    <li>
+                        <a href="/html/Connect.htm" class="xialaguang"><span>联系我们</span></a>
+                    </li>   
+                </ul>
+            </div>
+
+		</div>
+    </div>
+    <div id="home">
+  
+	</div>
+
+<div id="main">
+    <table border="0" style="font-family: 幼圆; font-weight: bold; padding: 0px; text-align:center;height:300px;width:1000px;">
+        <tr >
+            <td align="left"   height="50%" valign="top"></td>
+        </tr>
+        <tr >
+            <td align="left"   height="30%" valign="top">地址:上海市浦东新区东明路300号</td>
+        </tr>
+        <tr>
+            <th align="left"   height="30%" valign="top">邮箱:ses_tyzx@163.com</th>
+        </tr>
+       
+    </table>
+    
+</div>
+<div id="foot" style="color: white; font-family: 幼圆; font-weight: bold; padding-top: 20px;">
+		<h3>现代科技体验中心</h3>
+        版权所有：上海市实验学校 总部地址：上海市浦东新区东明路300号 邮编：200125
+	</div>
+</body>
+</html>

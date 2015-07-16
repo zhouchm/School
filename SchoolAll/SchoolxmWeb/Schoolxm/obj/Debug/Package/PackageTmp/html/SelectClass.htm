@@ -1,0 +1,119 @@
+﻿#parse("ExampleHeadUp1.htm")
+<style type="text/css">
+#main table{width:96%;margin:20px;font-family:幼圆;font-size:18px;}
+#myTable th{background:#e5f1f4;}
+#myTable td{background:#f8fbfc;}
+#myTable tr.even td{background:#e5f1f4;}
+#myTable tr.odd td{background:#f8fbfc;}
+#myTable tr.over td{background:#bce774;}
+#myTable tr.out td{}
+</style>
+<script type="text/javascript">
+    window.onload = function () {
+        var changeTr = document.getElementById("myTable").getElementsByTagName("tr");
+        for (i = 0; i < changeTr.length; i++) {
+            changeTr[i].className = (i % 2 > 0) ? "even" : "odd";
+            changeTr[i].temp = changeTr[i].className;
+            changeTr[i].onmouseover = function () {
+                this.className = 'over';
+            }
+            changeTr[i].onmouseout = function () {
+                this.className = this.temp;
+            }
+        }
+        var num = document.getElementById("kyy");
+        num.innerHTML = 50 - $Model.count;
+    };
+</script>
+#parse("ExampleHeadUp2.htm")
+您好,$Model.Name
+#parse("ExampleHeadDown.htm")
+<div id="main">
+    <table border="3" style="height:50px; margin:20px; font-family:幼圆; font-weight:bold;" bordercolor="#6BC631" cellpadding="10" rules="none" cellspacing="0">
+        <tr>
+            <td align="left">
+                <p>
+                    预约时间:$Model.day$Model.time
+                    &nbsp;已预约:$Model.count人
+                    &nbsp;可预约:<span id="kyy"></span>人
+                </p>
+            </td>
+            <td align="right">
+                <form action="/SelectClass.ashx">
+                    <input  type="hidden" name="Action" value="HaveClass"/>
+                    <input type="hidden" name="Count" value="$Model.count" />
+                    <input  type="hidden" name="Day" value="$Model.day"/>
+                    <input  type="hidden" name="Time" value="$Model.time"/>
+                    <input  type="hidden" id="StuCount" name="StuCount" value=""/>
+                    年级:
+                    <select name="grade" id="grade" style="width:80px; height:30px; font-family:幼圆; font-weight:bold;">       
+                        #foreach($m in $Model.Grade)
+                            <option id="$m.Grade">$m.Grade</option>
+                        #end      
+                    </select>
+                    <script type="text/javascript">
+                        var g = window.document.getElementById("$Model.CurrentGrade");
+                        g.selected = "selected";
+                    </script> 
+                    班级:
+                    <select name="class" id="class" style="width:50px; height:30px; font-family:幼圆; font-weight:bold;">
+                    <option id="1">1</option>
+                    <option id="2">2</option>
+                    <option id="3">3</option>
+                    <option id="4">4</option>
+                    <option id="5">5</option>
+                    <option id="6">6</option>
+                    <option id="7">7</option>
+                    <option id="8">8</option>
+                    <option id="9">9</option>
+                    <option id="10">10</option>
+                    </select>&nbsp;
+                    <script type="text/javascript">
+                        var g = window.document.getElementById("$Model.CurrentClass");
+                        g.selected = "selected";
+                    </script> 
+                    <input type="submit" style="width:80px; height:30px; background-color:Orange; border:1px solid Red; font-family:幼圆; font-weight:bold;" value="选择班级" />
+                </form>
+            </td>
+        </tr>
+    </table>
+    <form action="/UpdateTime.ashx">
+        <input type="hidden" name="stuCount" value="$Model.stuCount"/>
+        <input type="hidden" name="day" value="$Model.day"/>
+        <input type="hidden" name="time" value="$Model.time"/>
+        <input type="hidden" name="Count" value="$Model.count"/>
+        <input type="hidden" name="grade" value="$Model.grade"/>
+        <input type="hidden" name="Class" value="$Model.Class"/>
+        <table id="myTable" border="1" cellpadding="10px" rules="rows">
+            <thead>
+                <tr>
+                    <th align="left">编号</th>
+                    <th align="left">选择</th>
+                    <th align="left">学号</th>
+                    <th align="left">姓名</th>          
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <input type="submit" value="添加" style="width:80px; height:30px; background-color:Orange; border:1px solid Red; font-family:幼圆; font-weight:bold;" />
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody>
+                #foreach($m in $Model.groupOrder)
+                    <tr>                          
+                        <td align="left">$m.Id</td>
+                        <td align="left">
+                            <input type="checkbox" style="width:20px; height:20px;" id ="$m.StuAccount" name="checkbox" value="$m.StuName" />
+                        </td>
+                        <td align="left">$m.StuAccount</td>  
+                        <td align="left">$m.StuName</td>
+                    </tr>
+                #end       
+            </tbody> 
+        </table>
+    </form>
+</div>
+
+#parse("ExampleFoot.htm")

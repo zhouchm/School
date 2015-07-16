@@ -1,0 +1,530 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{95D0BF3E-71D3-428D-B5E0-E8DC15F806F6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Schoolxm</RootNamespace>
+    <AssemblyName>Schoolxm</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NVelocity">
+      <HintPath>..\NVelocity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="ThoughtWorks.QRCode, Version=1.0.2774.19990, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\QRCode二维码生成组件\QRCode二维码生成组件\QRCodeSample_DLL文件\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="UHFReader18CSharp">
+      <HintPath>..\..\UHFReader18CSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Button\button1.swf" />
+    <Content Include="Button\button2.swf" />
+    <Content Include="Button\button3.swf" />
+    <Content Include="Button\button4.swf" />
+    <Content Include="css\Items.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\UserCSS.css" />
+    <Content Include="html\AdminAdd.htm" />
+    <Content Include="html\AdminAddMessage.htm" />
+    <Content Include="html\AdminEdit.htm" />
+    <Content Include="html\AdminHomeNoName.htm" />
+    <Content Include="html\AdminList.htm" />
+    <Content Include="html\AdminLogin.htm" />
+    <Content Include="html\AdminModPwd.htm" />
+    <Content Include="html\BraList.htm" />
+    <Content Include="html\Connect.htm" />
+    <Content Include="html\Example.htm" />
+    <Content Include="html\ExampleFoot.htm" />
+    <Content Include="html\ExampleHead.htm" />
+    <Content Include="html\ExampleHeadDown.htm" />
+    <Content Include="html\ExampleHeadUp.htm" />
+    <Content Include="html\Get.htm" />
+    <Content Include="html\GetSuccess.htm" />
+    <Content Include="html\GroupOrder.htm" />
+    <Content Include="html\GroupOrderMessage.htm" />
+    <Content Include="html\HomeHavName.htm" />
+    <Content Include="html\HomeNoName.htm" />
+    <Content Include="html\Introduce.htm" />
+    <Content Include="html\kejiyujiao.html" />
+    <Content Include="html\lexuezhiyuan .html" />
+    <Content Include="html\map.htm" />
+    <Content Include="html\New.htm" />
+    <Content Include="html\NewList.htm" />
+    <Content Include="html\New_Edit.htm" />
+    <Content Include="html\OrderNumber.htm" />
+    <Content Include="html\OrderSet.htm" />
+    <Content Include="html\RegisterEmail.htm" />
+    <Content Include="html\RegistPreSuccess.htm" />
+    <Content Include="html\RegistSuccess.htm" />
+    <Content Include="html\SelectClass.htm" />
+    <Content Include="html\tiyanhuigu.html" />
+    <Content Include="html\tiyanxiangmu.html" />
+    <Content Include="html\tyzxintroduce.htm" />
+    <Content Include="html\UewList.htm" />
+    <Content Include="html\UserEdit.htm" />
+    <Content Include="html\UserEditAtAdmin.htm" />
+    <Content Include="html\UserList.htm" />
+    <Content Include="html\UserLogin.htm" />
+    <Content Include="html\UserOrder.htm" />
+    <Content Include="html\UserRegister.htm" />
+    <Content Include="html\AdminHomeHavName.htm" />
+    <Content Include="html\ScenceList.htm" />
+    <Content Include="html\ScenceAdd.htm" />
+    <Content Include="html\ScenceEdit.htm" />
+    <Content Include="html\ScenceDeviceList.htm" />
+    <Content Include="html\ConNodeList.htm" />
+    <Content Include="html\ExampleHavNameHead.htm" />
+    <Content Include="html\ExampleHeadUp1.htm" />
+    <Content Include="html\ExampleHead1.htm" />
+    <Content Include="html\UNew.htm" />
+    <Content Include="html\yinxiangshiyan.html" />
+    <Content Include="html\zhutineirong.html" />
+    <Content Include="Images\1.jpg" />
+    <Content Include="Images\2.jpg" />
+    <Content Include="Images\3.jpg" />
+    <Content Include="Images\4.jpg" />
+    <Content Include="Images\admin.jpg" />
+    <Content Include="Images\bg.gif" />
+    <Content Include="Images\bg1.PNG" />
+    <Content Include="Images\bj.bmp" />
+    <Content Include="Images\body.jpg" />
+    <Content Include="Images\chushihudongjiaoxue.jpg" />
+    <Content Include="Images\dashujuwulainwangtiyanqu.jpg" />
+    <Content Include="Images\dashujuwulianwangtiyanqu1.jpg" />
+    <Content Include="Images\dashujuwulianwangtiyanqu2.jpg" />
+    <Content Include="Images\dili.jpg" />
+    <Content Include="Images\door.jpg" />
+    <Content Include="Images\end.png" />
+    <Content Include="Images\erweima.png" />
+    <Content Include="Images\footbg.png" />
+    <Content Include="Images\Geterror.png" />
+    <Content Include="Images\GetSuccess.png" />
+    <Content Include="Images\Groub.jpg" />
+    <Content Include="Images\guanleyundong.jpg" />
+    <Content Include="Images\header.png" />
+    <Content Include="Images\history.jpg" />
+    <Content Include="Images\home.png" />
+    <Content Include="Images\light0.PNG" />
+    <Content Include="Images\light1.PNG" />
+    <Content Include="Images\lishi.jpg" />
+    <Content Include="Images\litiyingyuan.jpg" />
+    <Content Include="Images\movie.png" />
+    <Content Include="Images\mub.PNG" />
+    <Content Include="Images\Ne.jpg" />
+    <Content Include="Images\New.jpg" />
+    <Content Include="Images\news.png" />
+    <Content Include="Images\ord.png" />
+    <Content Include="Images\order.png" />
+    <Content Include="Images\picture.jpg" />
+    <Content Include="Images\pingmian.png" />
+    <Content Include="Images\scence.jpg" />
+    <Content Include="Images\shishitiiyan.png" />
+    <Content Include="Images\shiyanfengcai%27.jpg" />
+    <Content Include="Images\shiyanfengcai.jpg" />
+    <Content Include="Images\shiyanlicheng.jpg" />
+    <Content Include="Images\shiyanlicheng1.jpg" />
+    <Content Include="Images\shouhuan.png" />
+    <Content Include="Images\start.png" />
+    <Content Include="Images\tiyandaolan.jpg" />
+    <Content Include="Images\tyy0.PNG" />
+    <Content Include="Images\tyy1.PNG" />
+    <Content Include="Images\user.png" />
+    <Content Include="Images\wanzhuanhuaxue.jpg" />
+    <Content Include="Images\wanzhuanhuaxue1.jpg" />
+    <Content Include="Images\weixingyanjiang.jpg" />
+    <Content Include="Images\xiaoyuanjiankong.jpg" />
+    <Content Include="Images\xunigangqin.jpg" />
+    <Content Include="Images\xunishiyanshi.jpg" />
+    <Content Include="Images\xunishiyanshi1.jpg" />
+    <Content Include="Images\xunishiyanshi2.jpg" />
+    <Content Include="Images\xuting.jpg" />
+    <Content Include="Images\yuwem1.jpg" />
+    <Content Include="Images\yuwen.jpg" />
+    <Content Include="Images\zhihuijingling.jpg" />
+    <Content Include="Images\zhihuizhimenguanbi.png" />
+    <Content Include="Images\zhihuizhimenkaiqi.jpg" />
+    <Content Include="Images\zhinenghuihua.jpg" />
+    <Content Include="Images\zhinenghuihua1.png" />
+    <Content Include="Images\zhnegtixiaoguo.jpg" />
+    <Content Include="js\ajax.js" />
+    <Content Include="js\ChunkFive_400.font.js" />
+    <Content Include="js\cufon-yui.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\UserJS.js" />
+    <Content Include="Movie\Clear_Skin_1.swf" />
+    <Content Include="Movie\Clear_Skin_2.swf" />
+    <Content Include="Movie\FLVPlayer_Progressive.swf" />
+    <Content Include="Movie\image.jpg" />
+    <Content Include="Movie\password.png" />
+    <Content Include="Movie\user.png" />
+    <Content Include="Movie\体验馆导览.mp4" />
+    <Content Include="Movie\形象.swf" />
+    <Content Include="Movie\形象2.swf" />
+    <Content Include="ThoughtWorks.QRCode.dll" />
+    <Content Include="html\UserModPwd.htm" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.cs" />
+    <Compile Include="AdminAdd.ashx.cs">
+      <DependentUpon>AdminAdd.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAddMessage.ashx.cs">
+      <DependentUpon>AdminAddMessage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDAL.cs" />
+    <Compile Include="AdminEdit.ashx.cs">
+      <DependentUpon>AdminEdit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHome.ashx.cs">
+      <DependentUpon>AdminHome.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminList.ashx.cs">
+      <DependentUpon>AdminList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLogin.ashx.cs">
+      <DependentUpon>AdminLogin.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModPwd.ashx.cs">
+      <DependentUpon>AdminModPwd.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="BraList.ashx.cs">
+      <DependentUpon>BraList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckAdminEmail.ashx.cs">
+      <DependentUpon>CheckAdminEmail.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckAdminPwd.ashx.cs">
+      <DependentUpon>CheckAdminPwd.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckAdminUserName.ashx.cs">
+      <DependentUpon>CheckAdminUserName.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckEmail.ashx.cs">
+      <DependentUpon>CheckEmail.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckIdNumber.ashx.cs">
+      <DependentUpon>CheckIdNumber.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckUserName.ashx.cs">
+      <DependentUpon>CheckUserName.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckUserOrderYesOrNo.cs" />
+    <Compile Include="CheckUserPwd.ashx.cs">
+      <DependentUpon>CheckUserPwd.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonHelper.cs" />
+    <Compile Include="ConNode.cs" />
+    <Compile Include="Example.ashx.cs">
+      <DependentUpon>Example.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Get.ashx.cs">
+      <DependentUpon>Get.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GroupOrder.ashx.cs">
+      <DependentUpon>GroupOrder.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.ashx.cs">
+      <DependentUpon>Home.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="map.ashx.cs">
+      <DependentUpon>map.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="New.ashx.cs">
+      <DependentUpon>New.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="NewList.ashx.cs">
+      <DependentUpon>NewList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderSet.ashx.cs">
+      <DependentUpon>OrderSet.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="OrederNumber.ashx.cs">
+      <DependentUpon>OrederNumber.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistSuccess.ashx.cs">
+      <DependentUpon>RegistSuccess.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="SceAddDev.ashx.cs">
+      <DependentUpon>SceAddDev.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ScenceDeviceAdd.ashx.cs">
+      <DependentUpon>ScenceDeviceAdd.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectClass.ashx.cs">
+      <DependentUpon>SelectClass.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlHelper.cs" />
+    <Compile Include="TimeNumber.cs" />
+    <Compile Include="TimeNumberDAL.cs" />
+    <Compile Include="TimeSet.cs" />
+    <Compile Include="TimeSetDAL.cs" />
+    <Compile Include="TimeUser.cs" />
+    <Compile Include="TimeUserDAL.cs" />
+    <Compile Include="tyzxintroduce.ashx.cs">
+      <DependentUpon>tyzxintroduce.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UNew.ashx.cs">
+      <DependentUpon>UNew.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UNewList.ashx.cs">
+      <DependentUpon>UNewList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTime.ashx.cs">
+      <DependentUpon>UpdateTime.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="UserDAL.cs" />
+    <Compile Include="UserEdit.ashx.cs">
+      <DependentUpon>UserEdit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UserEditAtAdmin.ashx.cs">
+      <DependentUpon>UserEditAtAdmin.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UserList.ashx.cs">
+      <DependentUpon>UserList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogin.ashx.cs">
+      <DependentUpon>UserLogin.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UserModPwd.ashx.cs">
+      <DependentUpon>UserModPwd.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UserOrder.ashx.cs">
+      <DependentUpon>UserOrder.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRegister.ashx.cs">
+      <DependentUpon>UserRegister.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ScenceList.ashx.cs">
+      <DependentUpon>ScenceList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Scence.cs" />
+    <Compile Include="ScenceAdd.ashx.cs">
+      <DependentUpon>ScenceAdd.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ScenceDAL.cs" />
+    <Compile Include="CheckSceId.ashx.cs">
+      <DependentUpon>CheckSceId.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ScenceEdit.ashx.cs">
+      <DependentUpon>ScenceEdit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ScenceDeviceList.ashx.cs">
+      <DependentUpon>ScenceDeviceList.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CheckUserName.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UserRegister.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CheckEmail.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CheckIdNumber.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UserLogin.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UserEdit.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UserList.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="QRCode\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CheckUserPwd.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UserModPwd.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminAdd.ashx" />
+    <Content Include="AdminEdit.ashx" />
+    <Content Include="AdminList.ashx" />
+    <Content Include="CheckAdminEmail.ashx" />
+    <Content Include="CheckAdminUserName.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminModPwd.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CheckAdminPwd.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminLogin.ashx" />
+    <Content Include="RegistSuccess.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Home.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminHome.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ScenceList.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ScenceAdd.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CheckSceId.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ScenceEdit.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ScenceDeviceList.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ScenceDeviceAdd.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SceAddDev.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GroupOrder.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SelectClass.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UpdateTime.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UserOrder.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OrderSet.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BraList.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="map.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Example.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NewList.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="New.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UNewList.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UserEditAtAdmin.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="html\ExampleHeadUp2.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="html\ExampleHead2.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminAddMessage.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UNew.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Get.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OrederNumber.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tyzxintroduce.ashx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>48984</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

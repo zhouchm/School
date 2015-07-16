@@ -1,0 +1,61 @@
+﻿#parse("ExampleHeadUp1.htm")
+<style type="text/css">
+#main table{width:96%;margin:20px;font-family:幼圆;font-size:18px;}
+#myTable th{background:#e5f1f4;}
+#myTable td{background:#f8fbfc;}
+#myTable tr.even td{background:#e5f1f4;}
+#myTable tr.odd td{background:#f8fbfc;}
+#myTable tr.over td{background:#bce774;}
+#myTable tr.out td{}
+</style>
+<script type="text/javascript">
+    window.onload = function () {
+        var changeTr = document.getElementById("myTable").getElementsByTagName("tr");
+        for (i = 0; i < changeTr.length; i++) {
+            changeTr[i].className = (i % 2 > 0) ? "even" : "odd";
+            changeTr[i].temp = changeTr[i].className;
+            changeTr[i].onmouseover = function () {
+                this.className = 'over';
+            }
+            changeTr[i].onmouseout = function () {
+                this.className = this.temp;
+            }
+        }
+    };
+    function add() {
+        window.location.href = "ScenceAdd.ashx";
+    }
+</script>
+#parse("ExampleHeadUp2.htm")
+您好,$Model.Name
+#parse("ExampleHeadDown.htm")
+<div id="main">
+    <table id="myTable" border="1" cellpadding="10px" rules="rows">
+        <thead>
+            <tr>
+                <th>用户名</th>
+                <th>真实姓名</th>
+                <th>性别</th>
+                <th>邮箱</th>
+                <th colspan="2">用户操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            #foreach($p in $Model.Users)
+                <tr style="height:30px;">  
+                    <td>$p.UserName</td>
+                    <td>$p.RealName</td>
+                    <td>$p.Gender</td>
+                    <td>$p.Email</td>
+                    <td>
+                        <a href="UserEditAtAdmin.ashx?Action=Adm_edit&UserName=$p.UserName">编辑</a>
+                    </td>
+                    <td>
+                        <a href="UserEditAtAdmin.ashx?Action=Delete&UserName=$p.UserName">删除</a>
+                    </td>
+                </tr>
+            #end
+        </tbody>
+    </table>
+</div>
+#parse("ExampleFoot.htm")

@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>科技寓教</title>
+<style type="text/css">
+
+	<style type="text/css">
+	#menu{ 
+		width:960px; 
+		margin:100px auto;
+	}
+	#menu li{	
+		float:left;
+		width:280px;
+		height:288px;
+		margin-left:8px;
+		position:relative; 
+		overflow:hidden;
+	}
+	#menu li div{
+	position:absolute;
+	width:285px;
+	height:474px;
+	padding:10px;
+	text-align:center;
+	background: rgba(0,0,0, 1);
+	opacity: 0;
+		-webkit-transition: color 0.2s linear;
+		-moz-transition: color 0.2s linear;
+		-o-transition: color 0.2s linear;
+		-ms-transition: color 0.2s linear;
+	transition: color 0.2s linear;
+	left: -4px;
+	top: 433px;
+	}
+	#menu li:hover div{
+		background: rgba(0,0,0, 0.5); 
+		opacity: 1;
+		color:#ccc;
+	}
+	#menu li:first-child div,#menu li:nth-child(3) div{
+		-webkit-transition: top 0.4s ease-in-out, opacity 0.6s ease-in-out;
+		-moz-transition: top 0.4s ease-in-out, opacity 0.6s ease-in-out;
+		-o-transition: top 0.4s ease-in-out, opacity 0.6s ease-in-out;
+		-ms-transition: top 0.4s ease-in-out, opacity 0.6s ease-in-out;
+		transition: top 0.4s ease-in-out, opacity 0.6s ease-in-out;
+	}
+	#menu li:first-child div{
+		left:0; 
+		top:288px; 
+	}
+	#menu li:first-child:hover div,#menu li:nth-child(3):hover div{
+		top:0;
+	}
+	#menu li:nth-child(2) div,#menu li:last-child div{
+		-webkit-transition: left 0.4s ease-in-out, opacity 0.6s ease-in-out;
+		-moz-transition: left 0.4s ease-in-out, opacity 0.6s ease-in-out;
+		-o-transition: left 0.4s ease-in-out, opacity 0.6s ease-in-out;
+		-ms-transition: left 0.4s ease-in-out, opacity 0.6s ease-in-out;
+		transition: left 0.4s ease-in-out, opacity 0.6s ease-in-out;	
+	}
+	#menu li:nth-child(2) div{
+		left:-200px; 
+		top:0; 
+	}
+	#menu li:nth-child(2):hover div,#menu li:last-child:hover div{
+		left:0;
+	}
+	#menu li:nth-child(3) div{
+		left:0; 
+		top:-288px; 
+	}
+	
+	#menu li:last-child div{
+		left:200px; 
+		top:0; 
+	}
+	#menu h1{
+		font-size:16px; 
+		padding-top:60px;
+		font-weight:bold;
+	}
+	#menu p{
+		text-align:left;
+	}
+.STYLE2 {font-size: 9px; }
+#Layer1 {
+	position:absolute;
+	width:112px;
+	height:45px;
+	z-index:1;
+	left: 1127px;
+	top: 189px;
+}
+.STYLE4 {
+	font-size: 14px;
+	color: #6699FF;
+	font-weight: bold;
+}
+.STYLE5 {
+	color: #993366;
+	font-weight: bold;
+	font-size: 16px;
+}
+.STYLE6 {
+	font-size: 16px;
+	color: #000000;
+}
+.STYLE7 {
+	color: #996699;
+	font-weight: bold;
+}
+</style>
+<!--
+body {
+	background-image: url();
+}
+#Layer1 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:1;
+}
+.STYLE1 {font-family: "宋体"}
+#Layer2 {
+	position:absolute;
+	width:74px;
+	height:33px;
+	z-index:1;
+	left: 1167px;
+	top: 186px;
+}
+-->
+<script type="text/JavaScript">
+<!--
+
+    function MM_displayStatusMsg(msgStr) { //v1.0
+        status = msgStr;
+        document.MM_returnValue = true;
+    }
+//-->
+</script>
+</head>
+
+<body topmargin=0 leftmargin=0>
+<center>
+<script language="JavaScript" type="text/javascript">
+    function nowTime(format) {
+        var dt = new Date();
+        //年份
+        this.Year = dt.getFullYear();
+        //月份
+        this.Month = dt.getMonth() + 1;
+        //日期
+        this.Day = dt.getDate();
+        //星期几,数字
+        this.Week = dt.getDay();
+        //星期几，中文
+        this.WeekDay = '日一二三四五六'.charAt(dt.getDay());
+        //24制小时
+        this.Hours24 = dt.getHours();
+        //12制小时
+        this.Hours12 = this.Hours24 > 12 ? this.Hours24 : this.Hours24 - 12;
+        //分钟
+        this.Minutes = dt.getMinutes();
+        //秒
+        this.Seconds = dt.getSeconds();
+        format = format.replace("yy", this.Year);
+        format = format.replace("MM", this.Month);
+        format = format.replace("dd", this.Day);
+        format = format.replace("HH", this.Hours24);
+        format = format.replace("hh", this.Hours12);
+        format = format.replace("mm", this.Minutes);
+        format = format.replace("ss", this.Seconds);
+        format = format.replace("ww", this.Week);
+        format = format.replace("WW", this.WeekDay);
+        //时间显示在页面中哪个标签里，这里是其id
+        this.toShow = function (element) {
+            document.getElementById(element).innerHTML = format;
+        }
+    }
+</script>
+<table width="1233" height="702" border="0" align="center" cellspacing="0" background="/Images/body.jpg">
+<tr>
+  <td width="1231" height="204" align="center" valign="bottom"><img src="/Images/home.png" width="1230" height="215" vspace="0" />
+  <div class="STYLE4" id="Layer1"><a href="/html/tyzxintroduce.htm">返回导览页</div>
+</tr>
+  
+
+  <tr>
+    <td height="397" align="right"><table width="1231" height="421" border="0" cellspacing="6">
+      <tr valign="top">
+        <td height="409"><p>
+          <font color=black>▲</font><span class="STYLE5"> 现代科技，创造寓教空间</span><font color=black><br>
+          <hr>
+          </font>
+          <p align="center" class="STYLE6">科技寓教分为以下四种模式：互动教学、立体影院、微型演讲、校园监控</p>
+
+	<div id="menu">
+		<ul>
+			<li>
+				<img src="/Images/dili.jpg" alt="" width="285" height="311" />
+				<div>
+				  <h1>互动教学</h1>
+					<p class="STYLE2">互动教学模式借助最新的CAVE系
+					  统营造身临其境的<br />教学体验环境，
+					  同时辅以现代的IPAD集中控制、<br />传
+					  感采集技术、无线交互技术及智
+					  能手环RFID等<br />技术，打造国内首
+					  创的情景体验式互动教学及多功能<br />
+					  体验空间。通过营造情景体验式互
+					  动教学环境，让<br />师生在轻松快乐地
+					  互动体验过程中学习知识，爱<br />上课
+			        堂。 </p>
+				</div>
+			</li>
+			<li>
+				<img src="/Images/litiyingyuan.jpg" alt="" width="285" height="311" />
+				<div>
+					<h1>立体影院</h1>
+					<p class="STYLE2">采用三维投影等技术，为师生创造
+一个视听享受的观影空间，通过对
+校园进行三维建模、动画渲染并合
+成制作成的校园漫游动画，体验者
+在现场就能通过立体影院身临其境
+的漫游校园每一角落，感受校园风
+貌。另外，影院也可播放国内外一
+些具有科普价值的影片，展现鲜为
+人知的自然地理及风土人情，进而
+开拓师生的视野。 </p>
+				</div>
+			</li>
+			<li>
+				<img src="/Images/weixingyanjiang.jpg" alt="" width="285" height="311" />
+				<div>
+					<h1>微型演讲</h1>
+					<p class="STYLE2">与普通演讲模式相比，这个模
+式最大的不同就是现<br />场通过运
+用最新的舞美技术、投影技术
+及传感识<br />别技术，可营造出与
+演讲内容相称的环境氛围。同
+时，演讲台上配有IPAD、激光
+笔及无线耳麦等装置，以便演
+讲者在演讲过程中使用。整个
+演讲过程中，体验者借助最新
+多媒体技术，完成一场虚实结
+合、情景交融及互动参与的微
+型演讲活动。 </p>
+				</div>
+			</li>
+			<li>
+				<img src="/Images/xiaoyuanjiankong.jpg" alt="" width="285" height="311" />
+				<div>
+					<h1>校园监控</h1>
+					<p class="STYLE2">在这里，你可以通过互联网视
+频传输技术，“漫游”<br />实验学
+校校园的每个角落。体验者只
+需操作手中<br />IPAD（中控设备）
+，即可在互动体验空间观看到<br />
+学校的特色实验室、远程多媒
+体教室、图书馆、体<br />育馆、节
+能教学楼等校园角落情景，体
+验者不用<br />走出体验中心，就能
+全面感受到实验学校的优美。</p>
+				</div>
+			</li>
+		</ul>
+	</div></p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <blockquote>
+            <p>&nbsp;&nbsp;&nbsp;</p>
+      </blockquote>        </tr>
+    </table></td>
+  </tr>
+  <tr bgcolor="#006633">
+    <td width="1231" height="45" align="center" onmouseover="MM_displayStatusMsg('欢迎来到上海市实验学校体验中心');return document.MM_returnValue"><span class="STYLE3">
+    <marquee direction="left" width="100%">
+    <span class="STYLE7">欢迎来到上海市实验学校体验中心    </span>
+    <div id="timeshow">
+        <script language="JavaScript" type="text/javascript" defer="defer">
+            setInterval("new nowTime('当前时间：yy年MM月dd日 星期WW hh:mm:ss ').toShow('timeshow')", 1000);
+      </script>
+      </div>
+      <table width="1231" border="0" cellspacing="6">
+</table>
+</body>
+
+</html>

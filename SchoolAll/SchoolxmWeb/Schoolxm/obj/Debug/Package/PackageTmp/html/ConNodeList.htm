@@ -1,0 +1,66 @@
+﻿#parse("ExampleHeadUp1.htm")
+<style type="text/css">
+#main table{width:96%;margin:20px;font-family:幼圆;font-size:18px;}
+#myTable th{background:#e5f1f4;}
+#myTable td{background:#f8fbfc;}
+#myTable tr.even td{background:#e5f1f4;}
+#myTable tr.odd td{background:#f8fbfc;}
+#myTable tr.over td{background:#bce774;}
+#myTable tr.out td{}
+</style>
+<script type="text/javascript">
+    window.onload = function () {
+        var changeTr = document.getElementById("myTable").getElementsByTagName("tr");
+        for (i = 0; i < changeTr.length; i++) {
+            changeTr[i].className = (i % 2 > 0) ? "even" : "odd";
+            changeTr[i].temp = changeTr[i].className;
+            changeTr[i].onmouseover = function () {
+                this.className = 'over';
+            }
+            changeTr[i].onmouseout = function () {
+                this.className = this.temp;
+            }
+        }
+    };
+    function add() {
+        window.location.href = "SceAddDev.ashx";
+    }
+</script>
+#parse("ExampleHeadUp2.htm")
+您好,$Model.Name
+#parse("ExampleHeadDown.htm")
+<div id="main">
+    <table id="myTable" border="1" cellpadding="10px" rules="rows">
+        <thead>
+            <tr>
+                <th>设备号</th>
+                <th>设备名</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            #foreach($p in $Model.ConNodes)
+                <form action="/SceAddDev.ashx">
+                    <input type="hidden" name="Node_sn" id="Hidden1" value="$p.Node_sn" />
+                    <input type="hidden" name="Node_name" id="Hidden2" value="$p.Node_name" />
+                    <input type="hidden" name="SceId" id="Hidden3" value="$Model.SceId" />
+                    <tr>
+                        <td>$p.Node_sn</td>
+                        <td>$p.Node_name</td>
+                        <td >
+                            <select id="Select1" name="Control">
+                                <option value="open">开</option>
+                                <option value="close">关</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="submit" value="添加"/>
+                        </td>
+                    </tr>
+                </form>
+            #end
+        </tbody>
+    </table>
+</div>
+#parse("ExampleFoot.htm")

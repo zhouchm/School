@@ -1,0 +1,155 @@
+﻿body
+{
+    background:url("/Images/body.jpg");
+}
+div{
+	padding:0;
+	margin:0 auto;
+	text-align:center;
+	border:0px solid RED;  
+}
+#header{
+    width:1000px;
+    height:80px;
+    border-left:2px solid #ccc;
+    border-right:2px solid #ccc;
+    border-top:2px solid #ccc;
+    background-color:White;
+}
+#hleft{
+    float:left;
+    width:350px;
+    height:80px;
+}
+#hright{
+    float:right;
+    width:646px;
+    height:80px;
+}
+#home{
+    width:1000px;
+    height:200px;
+    z-index:-100;
+    position:relative;
+    background:url("/Images/home.png");
+    border-left:2px solid #ccc;
+    border-right:2px solid #ccc;
+}
+#main{
+    width:1000px;
+    height:650px;
+    overflow:auto;
+    border-left:2px solid #ccc;
+    border-right:2px solid #ccc;
+    border-bottom:2px solid #ccc;
+    background-color:White;
+}
+#mleft{
+    float:left;
+    width:498px;
+    height:646px;
+}
+#mright{
+    float:right;
+    width:498px;
+    height:646px;
+}
+#mleft1{
+    float:left;
+    width:398px;
+    height:646px;
+}
+#mright1{
+    float:right;
+    width:598px;
+    height:646px;
+}
+#main_u{
+    width:1000px;
+    height:350px;
+}
+#muleft{
+    float:left;
+    width:596px;
+    height:350px;
+}
+#muright{
+    float:right;
+    width:400px;
+    height:350px;
+}
+#main_m{
+    width:1000px;
+    height:300px;
+}
+#mmleft{
+    float:left;
+    width:400px;
+    height:300px;
+}
+#mmright{
+    float:right;
+    width:596px;
+    height:300px;
+}
+#foot{
+    width:100%;
+    height:100px;
+    background:url("/Images/footbg.png");
+    margin-top:10px;
+} 
+
+.ullicss ul{list-style:none;}
+.ullicss li{float:left; width:100px; margin-left:0px; line-height:30px;}
+.ullicss ul li ul {display:table-row-group;}
+.ullicss a:link{color:black; font-weight:bold; text-decoration:none; background:white;}
+.ullicss a:visited{color:black; font-weight:bold; text-decoration:none; background:white;}
+.ullicss a:hover{color:red; font-weight:bold; text-decoration:none; background:white;}
+.ullicss a:active{color:blue; font-weight:bold; text-decoration:none; background:white;}
+.ullicss a{display:block; text-align:center; height:30px;}
+        
+h1 {
+    font: bold 35px/60px Helvetica, Arial, Sans-serif;
+    text-align: center; color: #eee;
+}
+#images {
+    width: 380px;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    margin: 0px 10px;
+}
+#images img {
+    width: 380px;
+    height: 280px;
+    position: absolute;
+    top: 0;
+    left: -400px;
+    z-index: 1;
+    -o-transition: all linear 500ms;
+    -moz-transition: all linear 500ms;
+    -webkit-transition: all linear 500ms;
+}
+#images img:target {
+    left: 0;
+    z-index: 9;    
+}
+#images img:first-child {
+    left: 0;
+}
+#slider {
+    width: 150px;
+    height: 30px;
+    margin: 20px auto;
+}
+#slider a {
+    text-decoration: none;
+    background: #45b97c;
+    border: 1px solid #C6E4F2;
+    padding: 4px 6px;
+    color: #222;
+    margin: 20px auto;
+}
+#slider a:hover {
+    background: #C6E4F2;
+}

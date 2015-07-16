@@ -1,0 +1,46 @@
+﻿#parse("ExampleHeadUp1.htm")
+<script type="text/javascript">
+    function add() {
+        window.location.href = "AdminAdd.ashx";
+    }
+</script>
+#parse("ExampleHeadUp2.htm")
+您好,$Model.Name
+#parse("ExampleHeadDown.htm")
+<div id="main">
+<table border="1">
+    <thead>
+        <tr>
+            <th align="left">用户名</th>
+            <th align="left">真实姓名</th>
+            <th align="left">邮箱</th>
+            <th align="left">地址</th>
+            <th colspan="2" align="left">用户操作</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td colspan="6">
+                <input type="button" name="add" value="添加" onclick="add()" />
+            </td>
+        </tr>
+    </tfoot>
+    <tbody>
+        #foreach($p in $Model.Admin)
+            <tr>
+                <td>$p.UserName</td>
+                <td>$p.RealName</td>
+                <td>$p.email</td>
+                <td>$p.address</td>
+                <td>
+                    <a href="AdminEdit.ashx?Action=Adm_edit&UserName=$p.UserName">编辑</a>
+                </td>
+                <td>
+                    <a href="AdminEdit.ashx?Action=Delete&UserName=$p.UserName">删除</a>
+                </td>
+            </tr>
+        #end
+    </tbody>
+</table>
+</div>
+#parse("ExampleFoot.htm")

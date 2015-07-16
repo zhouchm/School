@@ -1,0 +1,504 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml"><HEAD>
+    <TITLE>印象实验</TITLE>
+	
+<script language="JavaScript" type="text/javascript">
+function nowTime(format)
+{
+var dt=new Date();
+//年份
+this.Year=dt.getFullYear();
+//月份
+this.Month=dt.getMonth()+1;
+//日期
+this.Day=dt.getDate();
+//星期几,数字
+this.Week=dt.getDay();
+//星期几，中文
+this.WeekDay='日一二三四五六'.charAt(dt.getDay());
+//24制小时
+this.Hours24=dt.getHours();
+//12制小时
+this.Hours12=this.Hours24>12 ? this.Hours24 :this.Hours24;
+//分钟
+this.Minutes=dt.getMinutes();
+//秒
+this.Seconds=dt.getSeconds();
+format=format.replace("yy",this.Year);
+format=format.replace("MM",this.Month);
+format=format.replace("dd",this.Day);
+format=format.replace("HH",this.Hours24);
+format=format.replace("hh",this.Hours12);
+format=format.replace("mm",this.Minutes);
+format=format.replace("ss",this.Seconds);
+format=format.replace("ww",this.Week);
+format=format.replace("WW",this.WeekDay);
+//时间显示在页面中哪个标签里，这里是其id
+this.toShow=function (element)
+{
+  document.getElementById(element).innerHTML=format;
+}
+}
+</script>
+    <style type="text/css">
+	
+    #fours_m{z-index:-10; width:430px; height:326px; background:#000;}
+    #f_img_roll{float:left;width:350px; height:300px; position:relative}
+    #f_img_roll img{position:absolute; left:0; top:0; width:350px;height:300px;}
+    #f_img_s{float:right; position:relative; width:80px; height:300px;}
+    #f_img_s ul{margin:0; padding:0; margin-left:6px; list-style:none;}
+    #f_img_s li{width:60px; height:45px;border:1px solid #0066cc;margin-top:3px;}
+    #f_img_s img{width:54px; height:39px; border:3px solid #000066;vertical-align:top; }
+    #f_img_s div{top:3px}
+    #f_mask{position:absolute; top:3px; right:12px; width:75px; height:47px; background:url(/imagesforcode/201211/mask.gif) no-repeat;}
+    #f_title{font-size:16px; font-weight:bold; clear:both; margin-top:10px; text-align:center; color:#fff; height:70px; width:80%}
+    body {
+	background-image: url(image/beij.png);
+	background-repeat: no-repeat;
+	margin-top: 75px;
+}
+#Layer1 {
+	position:absolute;
+	width:741px;
+	height:38px;
+	z-index:1;
+	left: 483px;
+	top: 69px;
+}
+    .STYLE2 {
+	color: #CC00FF;
+	font-weight: bold;
+	font-size: 18px;
+}
+    #Layer2 {
+	position:absolute;
+	width:741px;
+	height:70px;
+	z-index:2;
+	left: 483px;
+	top: 132px;
+}
+    #Layer3 {
+	position:absolute;
+	width:739px;
+	height:69px;
+	z-index:3;
+	left: 483px;
+	top: 218px;
+}
+    #Layer4 {
+	position:absolute;
+	width:741px;
+	height:42px;
+	z-index:4;
+	left: 482px;
+	top: 382px;
+}
+    #Layer5 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:4;
+	left: 506px;
+	top: 282px;
+}
+    #Layer6 {
+	position:absolute;
+	width:738px;
+	height:61px;
+	z-index:5;
+	left: 482px;
+	top: 440px;
+}
+    #Layer7 {
+	position:absolute;
+	width:200px;
+	height:34px;
+	z-index:6;
+	left: 485px;
+	top: 20px;
+}
+    .STYLE6 {
+	font-size: x-large;
+	font-weight: bold;
+}
+    #Layer8 {
+	position:absolute;
+	width:222px;
+	height:46px;
+	z-index:7;
+	left: 36px;
+	top: 19px;
+}
+    .STYLE7 {
+	font-size: xx-large;
+	font-weight: bold;
+	color: #9900CC;
+}
+    #Layer9 {
+	position:absolute;
+	width:430px;
+	height:82px;
+	z-index:8;
+	left: 10px;
+	top: 422px;
+}
+    #Layer10 {
+	position:absolute;
+	width:1270px;
+	height:32px;
+	z-index:1;
+	left: -3px;
+	top: 553px;
+	background-color: #006633;
+}
+    #Layer11 {
+	position:absolute;
+	width:409px;
+	height:32px;
+	z-index:9;
+	left: 832px;
+	top: 507px;
+}
+    #Layer12 {
+	position:absolute;
+	width:125px;
+	height:31px;
+	z-index:10;
+	left: 1081px;
+	top: 24px;
+}
+    .STYLE9 {
+	color: #006600;
+	font-size: large;
+	font-weight: bold;
+}
+    #Layer13 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:11;
+}
+    #Layer14 {
+	position:absolute;
+	width:740px;
+	height:62px;
+	z-index:11;
+	left: 482px;
+	top: 300px;
+}
+    </style>
+    <script type="text/javascript">
+    //图片资源
+    var imgs_m=[],imgs_s=[],imgs_title=[];
+    imgs_m[0]="/Images/xuting.jpg";
+    imgs_m[1]="/Images/zhihuijingling.jpg";
+    imgs_m[2]="/Images/tiyandaolan.jpg";
+    imgs_m[3]="/Images/zhihuizhimenkaiqi.jpg";
+    imgs_m[4]="/Images/shiyanlicheng.jpg";
+    imgs_m[5]="/Images/shiyanfengcai.jpg";
+    imgs_s[0]="/Images/xuting.jpg";
+    imgs_s[1]="/Images/zhihuijingling.jpg";
+    imgs_s[2]="/Images/tiyandaolan.jpg";
+    imgs_s[3]="/Images/zhihuizhimenkaiqi.jpg";
+    imgs_s[4]="/Images/shiyanlicheng.jpg";
+    imgs_s[5]="/Images/shiyanfengcai.jpg";
+    imgs_title[0]="第一张：序厅";
+    imgs_title[1]="第二张：智慧精灵";
+    imgs_title[2]="第三张：体验导览";
+    imgs_title[3]="第四张：智慧之门";
+    imgs_title[4]="第五张：实验历程";
+    imgs_title[5]="第六张：实验风采";
+    //显示小图
+    function imgs_s_dis(){
+    var imgs=document.getElementById("imgs");
+    var fr=document.createDocumentFragment();
+    for(var i=0;i<imgs_s.length;i++){
+    var li=document.createElement("li");
+    li.innerHTML="<img src='"+imgs_s[i]+"' alt='' />";
+    lis.push(li);
+    fr.appendChild(li);
+    }
+    imgs.appendChild(fr);
+    }
+    //图片切换
+    function img_scroll(num){
+    cur_img.src=imgs_m[num];
+    img_title.innerHTML=imgs_title[num];
+    }
+    //图片切换效果
+    var ie=/MSIE/.test(navigator.userAgent);//浏览器
+    var img_title=null;//title
+    var f_img_roll=null;//大图
+    var cur_img=null;//当前大图
+    var mb_img=null;//目标图
+    var f_mask=null;//MASK层
+    var lis=[];//所有LI
+    var cur_li=null;//当前MASK所在LI
+    var mb_li=null;//目标LI位置
+    var tt=null;//时间函数
+    var m=0;//默认top
+    var r=0;//当前lis下标
+    //自动播放
+    function img_play(){
+    r++;
+    if(r>lis.length-1)r=0;
+    mb_li=lis[r].offsetTop;
+    if(tt)clearTimeout(tt);
+    tt=setInterval("f_mask_mov()",25);
+    cur_li=lis[r];
+    img_scroll(r);
+    }
+    //加载动作
+    function _focus(){
+    imgs_s_dis();//初始小图显示
+    cur_li=lis[0];//初始当前mask所在元素
+    f_img_roll=document.getElementById("f_img_roll");
+    cur_img=f_img_roll.getElementsByTagName("img")[0];//得到默认大图引用
+    img_title=document.getElementById("f_title");
+    f_mask=document.getElementById("f_mask");//得到MASK引用
+    for(var i=0;i<lis.length;i++){
+    lis[i].onmouseover=function(){
+    this.style.border="1px solid #cc0000";
+    }
+    lis[i].onmouseout=function(){
+    this.style.border="1px solid #0066cc";
+    }
+    lis[i].num=i;
+    lis[i].onclick=function(){
+    if(cur_li!=this){
+    if(tt)clearTimeout(tt);//停止正在的播放
+    clearTimeout(ttt);//停止自动播放
+    r=this.num;
+    mb_li=this.offsetTop;
+    tt=setInterval("f_mask_mov()",40);
+    cur_li=this;
+    img_scroll(this.num);
+    }
+    }
+    }
+    ttt=setTimeout("img_play()",3000);//开始自动播放
+    }
+    //滑动效果
+    function f_mask_mov(){
+    if(m>mb_li){
+    m-=(m-mb_li)*0.2;
+    if((m-1)<mb_li){
+    clearTimeout(tt);
+    f_mask.style.top=mb_li+"px";
+    f_mask_top=mb_li;//更新M值
+    m=mb_li;
+    ttt=setTimeout("img_play()",3000);//开始自动播放
+    return;
+    }else{
+    f_mask.style.top=m+"px";
+    }
+    }else{
+    m+=(mb_li+5-m)*0.2;
+    if(m>mb_li){
+    clearTimeout(tt);
+    f_mask.style.top=mb_li+"px";
+    m=f_mask_top=f_mask.offsetTop;//更新M值
+    ttt=setTimeout("img_play()",3000);//开始自动播放
+    return;
+    }else{
+    f_mask.style.top=m+"px";
+    }
+    }
+    }
+    window.onload=_focus;
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" /></HEAD>
+	    <BODY>
+		
+	
+    <div id="fours_m">
+    <div id="f_img_roll">
+      <div align="center"><img src="/Images/xuting.jpg" width="361" height="264" /></div>
+    </div>
+    <div id="f_img_s">
+    <div id="f_mask"></div>
+    <div align="center">
+      <ul id="imgs">
+      </ul>
+    </div>
+    </div>
+    <div class="STYLE6" id="Layer7">详细介绍</div>
+    <div id="Layer3"><span class="STYLE2"><a name="tiyandaolan" id="tiyandaolan"></a>体验导览——</span>进入体验中心，体验者将看到左侧玻璃墙的上嵌入一块超载边屏，根据屏幕上导览画面内容提示，体验者在指定手环读取位置近距离挥动智能手环，屏上随即播放一段关于科技体验中心的参观导览的视频内容，通过简短的视频观看，让体验者对整
+个体验中心的体验内容、功能定位、体验
+项目、参观动线及体验规则等有全面的了解，从而让每位体验者可主动选择的最佳参观体验路径和方式。</div>
+	<div class="STYLE9" id="Layer12"><a href="/html/tyzxintroduce.htm">返回导览页</a></div>
+	<p align="left">
+  <script>
+(function(){
+  var o = document.getElementById("Layer3");
+  var s = o.innerHTML;
+  var p = document.createElement("span");
+  var n = document.createElement("a");
+  p.innerHTML = s.substring(0,120);
+  n.innerHTML = s.length > 120? "...展开" : "";
+  n.href = "###";
+  n.onclick = function(){
+    if (n.innerHTML == "...展开"){
+      n.innerHTML = "收起";
+      p.innerHTML = s;
+    }else{
+      n.innerHTML = "...展开";
+      p.innerHTML = s.substring(0,120);
+    }
+  }
+  o.innerHTML = "";
+  o.appendChild(p);
+  o.appendChild(n);
+})();
+  </script>
+    <div class="STYLE7" id="Layer8">印象实验</div>
+    <div id="Layer4"><span class="STYLE2">实验历程——</span>现场采用超窄边屏及灯箱形式还原了建筑窗户造型，内部嵌入拼接触摸屏。体验者点击触摸屏上的各个时间点或移动时间轴，可看到学校发展过程中的重大事件的相应视频内容和图文信息。 </div>
+	<p>
+  <script>
+(function(){
+  var o = document.getElementById("Layer4");
+  var s = o.innerHTML;
+  var p = document.createElement("span");
+  var n = document.createElement("a");
+  p.innerHTML = s.substring(0,80);
+  n.innerHTML = s.length > 80? "...展开" : "";
+  n.href = "###";
+  n.onclick = function(){
+    if (n.innerHTML == "...展开"){
+      n.innerHTML = "收起";
+      p.innerHTML = s;
+    }else{
+      n.innerHTML = "...展开";
+      p.innerHTML = s.substring(0,80);
+    }
+  }
+  o.innerHTML = "";
+  o.appendChild(p);
+  o.appendChild(n);
+})();
+  </script>
+    <p>
+    <div id="Layer2"><span class="STYLE2"><a name="zhihuijingling" id="zhihuijingling"></a>智慧精灵——</span>在体验中心的入口处，设置一扇电动移门，通过投影投射不同的智慧精灵的动态演绎内容在全息膜（贴在移门玻璃上）上。但体验者走近移门时，即可看到门上面浮现出一个智慧精灵，他像体验中心的主人一样，热情地欢迎每位参观者。“您好！欢迎来到现代科技体验中心，开启智慧体验之旅！”</div>
+	<p align="left">
+  <script>
+(function(){
+  var o = document.getElementById("Layer2");
+  var s = o.innerHTML;
+  var p = document.createElement("span");
+  var n = document.createElement("a");
+  p.innerHTML = s.substring(0,100);
+  n.innerHTML = s.length > 100? "...展开" : "";
+  n.href = "###";
+  n.onclick = function(){
+    if (n.innerHTML == "...展开"){
+      n.innerHTML = "收起";
+      p.innerHTML = s;
+    }else{
+      n.innerHTML = "...展开";
+      p.innerHTML = s.substring(0,100);
+    }
+  }
+  o.innerHTML = "";
+  o.appendChild(p);
+  o.appendChild(n);
+})();
+  </script>
+    <div id="Layer1"><span class="STYLE2"><a name="xuting" id="xuting"></a>序厅——</span>入口处左侧设有服务台，服务台上设有二维码
+扫描装置、手环读取设备及操作电脑，观众可
+提供网站上报名好的二维码进行扫描直接领取
+智能手环，也可通过右侧自动手环领取机现场
+输入个人基本信息自动领取智能手环。</div>
+	 <p align="left">
+  <script>
+(function(){
+  var o = document.getElementById("Layer1");
+  var s = o.innerHTML;
+  var p = document.createElement("span");
+  var n = document.createElement("a");
+  p.innerHTML = s.substring(0,100);
+  n.innerHTML = s.length > 100? "...展开" : "";
+  n.href = "###";
+  n.onclick = function(){
+    if (n.innerHTML == "...展开"){
+      n.innerHTML = "收起";
+      p.innerHTML = s;
+    }else{
+      n.innerHTML = "...展开";
+      p.innerHTML = s.substring(0,100);
+    }
+  }
+  o.innerHTML = "";
+  o.appendChild(p);
+  o.appendChild(n);
+})();
+  </script>
+    <div id="Layer14"><span class="STYLE2">智慧之门——</span>体验者走近移门时，看到门上投影的校园LOGO画面。根据画面的内容提示，体验者在指定手环读取位置近距离挥动智能手环，校园LOGO随即变幻成一扇“智慧之门”，LOGO进行图案变化，时长约30秒，期间智慧精灵对LOGO的涵义进行演绎。待LOGO消失，智慧之门伴随着动画效果演绎缓缓向左移动，当门完全开启后体验者便可进入参观体验。 </div>
+	<p align="left">
+  <script>
+(function(){
+  var o = document.getElementById("Layer14");
+  var s = o.innerHTML;
+  var p = document.createElement("span");
+  var n = document.createElement("a");
+  p.innerHTML = s.substring(0,80);
+  n.innerHTML = s.length > 80? "...展开" : "";
+  n.href = "###";
+  n.onclick = function(){
+    if (n.innerHTML == "...展开"){
+      n.innerHTML = "收起";
+      p.innerHTML = s;
+    }else{
+      n.innerHTML = "...展开";
+      p.innerHTML = s.substring(0,80);
+    }
+  }
+  o.innerHTML = "";
+  o.appendChild(p);
+  o.appendChild(n);
+})();
+  </script>
+    <div id="f_title">
+      <div align="center">第一张：序厅</div>
+    </div>
+    <div id="Layer6"><span class="STYLE2">实验风采——</span>当体验者靠近时，即可看到屏幕上显示的体验内容及规则的图文导览画面，体验者在指定手环读取位置近距离挥动智能手环，就启动屏幕内容播放，体验者可看到实验学校教学成就荣誉、投身公益及师生教学互动等内容。该部分内容主要以视频或图片播放形式展现，可通过开放后台，实时上传最新的内容，以做到单一形式，多样内容的展示效果。</div>
+		<p align="left">
+  <script>
+(function(){
+  var o = document.getElementById("Layer6");
+  var s = o.innerHTML;
+  var p = document.createElement("span");
+  var n = document.createElement("a");
+  p.innerHTML = s.substring(0,80);
+  n.innerHTML = s.length > 80? "...展开" : "";
+  n.href = "###";
+  n.onclick = function(){
+    if (n.innerHTML == "...展开"){
+      n.innerHTML = "收起";
+      p.innerHTML = s;
+    }else{
+      n.innerHTML = "...展开";
+      p.innerHTML = s.substring(0,80);
+    }
+  }
+  o.innerHTML = "";
+  o.appendChild(p);
+  o.appendChild(n);
+})();
+  </script>
+      <div id="Layer9"><img src="/Images/shouhuan.png" alt="手环" width="237" height="103" vspace="0" /> <img src="/Images/erweima.png" alt="二维码" width="183" height="104" /></div>
+	   <div class="STYLE9" id="Layer11">
+	<div id="timeshow">
+  <script language="JavaScript" type="text/javascript" defer="defer">
+  setInterval("new nowTime('当前时间：yy年MM月dd日 星期WW hh:mm:ss ').toShow('timeshow')",1000);
+  </script>
+  </div></div>
+	  
+       <div id="Layer10" onmouseover="MM_displayStatusMsg('欢迎来到上海市实验学校体验中心');return document.MM_returnValue"><span class="STYLE5"><span class="STYLE5">
+    <marquee direction="left" width="100%">
+      <span class="STYLE1" onmouseover="MM_displayStatusMsg('欢迎来到上海市实验学校体验中心');return document.MM_returnValue">欢迎来到上海市实验学校体验中心</span></div>
+	    </BODY>
+	
+    </HTML>
+     
+    

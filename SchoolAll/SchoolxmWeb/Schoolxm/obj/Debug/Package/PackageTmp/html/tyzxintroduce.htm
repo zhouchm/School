@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>现代科技体验中心</title>
+    <link rel="stylesheet" type="text/css" href="/css/UserCSS.css" />
+    <script type="text/javascript" src="/js/UserJS.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<style type="text/css">
+body {
+	background-image: url();
+}
+#Layer1 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:1;
+}
+.STYLE1 {font-family: "宋体"}
+-->
+</style>
+<script type="text/JavaScript">
+<!--
+
+    function MM_displayStatusMsg(msgStr) { //v1.0
+        status = msgStr;
+        document.MM_returnValue = true;
+    }
+//-->
+</script>
+<style type="text/css">
+    *{margin:0;padding:0;border:0;list-style:none;}
+    body{
+	font:17px/1.5 Verdana,Geneva,sans-serif;
+	background:#eee;
+	padding:10px;
+}
+    /*=========mF_liquid ========*/
+    .mF_liquid{position:relative;width:430px;height:290px;overflow:hidden;font:12px/1.5 Verdana,Geneva,sans-serif;background:#fff;}
+    .mF_liquid .loading{
+	position:absolute;
+	z-index:9999;
+	width:438px;
+	height:306px;
+	color:#666;
+	text-align:center;
+	padding-top:90px;
+	background:#fff url(/images/loading.gif) center -40px no-repeat;
+	top: -8px;
+	left: -1px;
+}/*载入画面*/
+    .mF_liquid .pic li,.mF_liquid .mod li{position:absolute;top:0;right:0;width:430px;height:290px;overflow:hidden;}
+    .mF_liquid .pic li img{position:absolute;right:0;width:430px;height:290px;}/*图片和焦点图框架一样大小*/
+    .mF_liquid .mod li img{width:100%;height:100%;}
+    .mF_liquid .num{position:absolute;z-index:3;bottom:1px;right:8px;color:#333;}/*按钮样式*/
+    .mF_liquid .num li{float:left;width:22px;height:18px;position:relative;line-height:18px;border:1px solid #196BA9;text-align:center;margin-right:3px;cursor:pointer;background:#dedede;filter:alpha(opacity=80);opacity:0.8;}
+    .mF_liquid .num li.current,.mF_liquid .num li.hover{background:#09f;color:#fff;font-weight:bold;height:20px;line-height:20px;top:-2px;}
+.STYLE5 {font-size: 14px}
+#Layer2 {
+	position:absolute;
+	width:651px;
+	height:106px;
+	z-index:1;
+	left: 70px;
+	top: 700px;
+}
+.STYLE8 {
+	font-weight: bold;
+	font-size: 16px;
+}
+#Layer3 {
+	position:absolute;
+	width:390px;
+	height:39px;
+	z-index:2;
+	left: 901px;
+	top: 680px;
+}
+</style>
+    <script type="text/javascript">
+        var myFocus = {
+            $: function (id) { return document.getElementById(id); },
+            $$: function (tag, obj) { return (typeof obj == 'object' ? obj : this.$(obj)).getElementsByTagName(tag); },
+            linear: function (t, b, c, d) { return c * t / d + b; },
+            easeOut: function (t, b, c, d) { return -c * ((t = t / d - 1) * t * t * t - 1) + b; },
+            move: function (obj, dir, val, type, spd, fn) {//位移函数，spd越大速度越小，即分更多的帧来完成，一般建议设置在dis值左右
+                var t = 0, b = parseInt(obj.style[dir]) || 0, c = val - b, d = spd || 50, st = type || 'linear', m = c > 0 ? 'ceil' : 'floor';
+                if (obj[dir + 'Timer']) clearInterval(obj[dir + 'Timer']);
+                obj[dir + 'Timer'] = setInterval(function () {
+                    if (t < d) { obj.style[dir] = Math[m](myFocus[st](++t, b, c, d)) + 'px'; }
+                    else { clearInterval(obj[dir + 'Timer']); fn && fn.call(obj); }
+                }, 10); return this;
+            },
+            zoom: function (obj, attr, val, type, spd, fn) {//缩放函数，参数设置同move
+                var t = 0, b = obj['offset' + attr.replace(/^(.)/, new Function('return arguments[1].toUpperCase()'))], c = val - b, d = spd || 50, st = type, m = c > 0 ? 'ceil' : 'floor';
+                if (obj[attr + 'Timer']) clearInterval(obj[attr + 'Timer']);
+                obj[attr + 'Timer'] = setInterval(function () {
+                    if (t < d) { obj.style[attr] = Math[m](myFocus[st](++t, b, c, d)) + 'px'; }
+                    else { clearInterval(obj[attr + 'Timer']); fn && fn.call(obj); }
+                }, 10); return this;
+            },
+            stop: function (obj) {//停止所有运动函数
+                var animate = ['left', 'right', 'top', 'bottom', 'width', 'height', 'fade'];
+                for (var i = 0; i < animate.length; i++) if (obj[animate[i] + 'Timer']) clearInterval(obj[animate[i] + 'Timer']);
+                return this;
+            },
+            addList: function (obj, cla, arr) {//生成HMTL列表部分，cla为生成列表的class，cla='txt'表示把图片alt生成其中的文字，cla='num'表示生成按钮数字
+                var s = [], n = this.$$('li', this.$$('ul', obj)[0]).length, num = cla.length;
+                for (var j = 0; j < num; j++) {
+                    s.push('<ul class=' + cla[j] + '>');
+                    for (var i = 0; i < n; i++) { s.push('<li>' + (cla[j] == 'num' ? (i + 1) : (cla[j] == 'txt' ? this.$$('li', obj)[i].innerHTML.replace(/\<img.*?\>/i, this.$$('img', obj)[i].alt) : '')) + '<span></span></li>') };
+                    s.push('</ul>');
+                }; obj.innerHTML += s.join('');
+            },
+            setting: function (par) {//设置DOM/文档加载就绪后执行的任务
+                if (window.attachEvent) { window.attachEvent('onload', function () { myFocus[par.style](par) }); }
+                else { window.addEventListener('load', function () { myFocus[par.style](par) }, false); }
+            },
+            //下面是风格样式（皮肤），格式mF_xxx（xxx是皮肤名字）
+            mF_liquid: function (par) {
+                var box = this.$(par.id), t = par.time * 1000; //焦点图盒子、停留时间
+                this.addList(box, ['mod', 'num']);
+                var PIC = this.$$('ul', box)[0], MOD = this.$$('ul', box)[1], BTN = this.$$('ul', box)[2];
+                var pic = this.$$('li', PIC), mod = this.$$('li', MOD), btn = this.$$('li', BTN);
+                var w = pic[0].offsetWidth, n = pic.length;
+                MOD.innerHTML = PIC.innerHTML;
+                for (var i = 0; i < n; i++) {//初始化样式设置
+                    mod[i].style.width = w * 10 + 'px';
+                    mod[i].style.right = w + 'px';
+                    pic[i].style.zIndex = 1;
+                    pic[i].style.width = 0 + 'px';
+                }
+                var index = 0; //开始显示的序号
+                box.removeChild(this.$$('div', box)[0]);
+                btn[index].className = 'current';
+                this.move(mod[index], 'right', 0, 'linear', 8, function () {
+                    myFocus.zoom(pic[index], 'width', w, 'easeOut', 90);
+                    myFocus.move(this, 'right', -w * 9, 'easeOut', 90)
+                });
+                var run = function (idx) {
+                    myFocus.stop(mod[index]).stop(pic[index]);
+                    mod[index].style.right = w + 'px';
+                    pic[index].style.width = 0 + 'px';
+                    btn[index].className = '';
+                    if (index == n - 1) index = -1;
+                    var N = idx != undefined ? idx : index + 1;
+                    myFocus.move(mod[N], 'right', 0, 'linear', 8, function () {
+                        myFocus.zoom(pic[N], 'width', w, 'easeOut', 90);
+                        myFocus.move(this, 'right', -w * 9, 'easeOut', 90)
+                    });
+                    btn[N].className = 'current';
+                    index = N;
+                }
+                var auto = setInterval(function () { run() }, t);
+                for (var j = 0; j < n; j++) {
+                    btn[j].j = j;
+                    btn[j].onmouseover = function () { if (!this.className) run(this.j) }
+                }
+                box.onmouseover = function () { clearInterval(auto); }
+                box.onmouseout = function () { auto = setInterval(function () { run() }, t); }
+            }
+        };
+        //
+        myFocus.setting({
+            style: 'mF_liquid', //风格样式，更多风格是请留意myFocus正式版的发布
+            id: 'myFocus', //焦点图ID
+            time: 3//每帧的停留时间，单位秒
+        });
+    </script>
+</head>
+
+<body topmargin=0>
+<div id="header">
+    	<div id="hleft">
+
+            <table border="0">
+                <tr>
+                    <td align="left" width="80px"><img src="/Images/header.png" alt="" height="70px" width="70px" /></td>
+                    <td align="left" style="font-family: 幼圆; font-weight: bold;font-size: 18px;">
+                        <p>上海市实验学校<br/>SHANGHAI EXPERIMENT SCHOOL</p>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+      	<div id="hright">
+
+            <div style="font-family: 幼圆; font-weight: bold; padding-top: 4px; padding-right: 20px; text-align: right;">
+                 体验导览
+            </div>
+		    <div class="ullicss" style="font-family: 幼圆;">
+                <ul>
+                    <li>
+                        <a href="/Home.ashx" class="xialaguang"><span>首页</span></a>
+                    </li>
+                    <li>
+                        <a href="/UserOrder.ashx" class="xialaguang"><span>个人预约</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="xialaguang"><span>展馆介绍</span></a>
+                    </li>
+                    <li onmouseover="show('id1')" onmouseout="shut('id1')">
+                        <a href="#" ><span>个人中心</span></a>
+                        <ul id="id1" style="display:none">
+            		        <li style="float: left"><a href="/UserModPwd.ashx"><span>修改密码</span></a></li>
+            		        <li><a href="/UserEdit.ashx?Action=user_edit"><span>个人信息</span></a></li>
+            	        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="xialaguang"><span>联系我们</span></a>
+                    </li>   
+                </ul>
+            </div>
+
+		</div>
+    </div>
+    <div id="home">
+  
+	</div>
+
+<script language="JavaScript" type="text/javascript">
+    function nowTime(format) {
+        var dt = new Date();
+        //年份
+        this.Year = dt.getFullYear();
+        //月份
+        this.Month = dt.getMonth() + 1;
+        //日期
+        this.Day = dt.getDate();
+        //星期几,数字
+        this.Week = dt.getDay();
+        //星期几，中文
+        this.WeekDay = '日一二三四五六'.charAt(dt.getDay());
+        //24制小时
+        this.Hours24 = dt.getHours();
+        //12制小时
+        this.Hours12 = this.Hours24 > 12 ? this.Hours24 : this.Hours24;
+        //分钟
+        this.Minutes = dt.getMinutes();
+        //秒
+        this.Seconds = dt.getSeconds();
+        format = format.replace("yy", this.Year);
+        format = format.replace("MM", this.Month);
+        format = format.replace("dd", this.Day);
+        format = format.replace("HH", this.Hours24);
+        format = format.replace("hh", this.Hours12);
+        format = format.replace("mm", this.Minutes);
+        format = format.replace("ss", this.Seconds);
+        format = format.replace("ww", this.Week);
+        format = format.replace("WW", this.WeekDay);
+        //时间显示在页面中哪个标签里，这里是其id
+        this.toShow = function (element) {
+            document.getElementById(element).innerHTML = format;
+        }
+    }
+</script>
+<table width="1000" height="702" border="0" align="center" cellspacing="0" background="/Images/body.jpg">
+
+  <tr>
+    <td height="42" align="center"><table width="1000" border="0" cellspacing="6">
+      <tr align="center" bgcolor="#006633">
+        <td width="298" height="45" bgcolor="#006633"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="100" height="23">
+          <param name="movie" value="/Button/button1.swf" />
+          <param name="quality" value="high" />
+          <param name="bgcolor" value="#006633" />
+          <embed src="Button/button1.swf" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="100" height="23" bgcolor="#006633"></embed>
+        </object></td>
+        <td width="298" bgcolor="#006633"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="100" height="23">
+          <param name="movie" value="/Button/button2.swf" />
+          <param name="quality" value="high" />
+          <param name="bgcolor" value="#006600" />
+          <embed src="Button/button2.swf" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="100" height="23" bgcolor="#006600"></embed>
+        </object></td>
+        <td width="299"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="100" height="23">
+          <param name="movie" value="/Button/button4.swf" />
+          <param name="quality" value="high" />
+          <param name="bgcolor" value="#006633" />
+          <embed src="Button/button4.swf" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="100" height="23" bgcolor="#006633"></embed>
+        </object></td>
+        <td width="298" bgcolor="#006633"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="100" height="23" title="体验回顾">
+          <param name="movie" value="/Button/button3.swf" />
+          <param name="quality" value="high" />
+          <param name="bgcolor" value="#006633" />
+          <embed src="Button/button3.swf" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="100" height="23" bgcolor="#006633"></embed>
+        </object></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="397" align="right"><table width="1000" height="431" border="0" cellspacing="6">
+      <tr valign="top">
+        <td width="330" height="419">
+		 <div id="myFocus" class="mF_liquid">
+    <div class="loading"><span>请稍候……</span></div>
+    <!--载入画面-->
+    <ul class="pic"><!--内容列表-->
+    <li><a href="#"><img src="/Images/xuting.jpg"  width="361" height="264"></a></li>
+    <li><a href="#"><img src="/Images/shiyanlicheng.jpg"  width="1600" height="1200"></a></li>
+    <li><a href="#"><img src="/Images/zhihuizhimenkaiqi.jpg"  width="1600" height="1200"></a></li>
+    <li><a href="#"><img src="/Images/xiaoyuanjiankong.jpg"  width="1600" height="900"></a></li>
+	 <li><a href="#"><img src="/Images/weixingyanjiang.jpg"  width="1600" height="900"></a></li>
+	  <li><a href="#"><img src="/Images/dili.jpg"  width="1600" height="900"></a></li>
+	   <li><a href="#"><img src="/Images/dashujuwulainwangtiyanqu.jpg" a width="1573" height="906"></a></li>
+	    <li><a href="#"><img src="/Images/zhnegtixiaoguo.jpg"  width="320" height="240"></a></li>
+    </ul>
+    </div>
+	
+         <div id="Layer2"><img src="/Images/shouhuan.png" width="230" height="104" />          <img src="/Images/erweima.png" width="194" height="104" /></div>
+        <td width="879"><blockquote>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              <span class="STYLE5">&nbsp;<a name="上海市实验学校" id="上海市实验学校"></a> 上海市实验学校是上海市唯一一所市级实验性学校，建校二十多年来，学校在课程、教材、学制、教师专业发展等方面进行了卓有成效的探索，也取得了丰硕的成果。&nbsp;</span></p>
+            <p>&nbsp;</p>
+            <p class="STYLE5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 信息化是学校各项工作开展的基础，实验的成果离不开信息化的支持。信息技术手段根目前已渗透到学校管理、教育教学、学生活动、教师专业发展等学校工作的诸方面</p>
+            <p class="STYLE5">&nbsp;</p>
+            <p class="STYLE5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 为使学校师生能够近距离感受信息技术的最新发展，学校准备以互联网、云计算、大数据及物联网等现代信息技术为手段，打造智能化的现代科技体验中心，为师生提供一个国内领先的信息化互动教学体验空间。</p>
+            <p class="STYLE5">&nbsp;</p>
+            <p class="STYLE5">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;集网络通讯技术、物联网技术、多媒体技术、动作识别捕捉技术、传感感应技术、智能集中控制技术等最新的信息技术应用。采用智能手环进行全过程互动参与达到智能化的体验效果，另外通过IFID技术构建整个体验中心的物联网数据库，实时采集、存储并分析项目运行、观众所有参与体验的数据。使用最新的二维码技术构建数字化的参观导览系统，在体验中心的不同区域和位置，分别设置了不同的二维码，体验着用智能手机扫描二维码，即可获知相应的体验内容、知识点及项目参与规则等信息，轻松享受数字化参观导览的引导服务。</p>
+            <p class="STYLE5">&nbsp;&nbsp;&nbsp;&nbsp; </p>
+            <p class="STYLE5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;体验中心位于学校科技楼一楼，建筑面积约为300平方。我们充分考虑了主题内容及建筑空间特点，将展示空间分为序厅、印象实验、科技寓教及乐学致远四个区域。 在这里，参观将变得“智能”化，您可以选择智能手环或扫描墙上二维码进行互动体验每个参与项目。</p>
+            <div class="STYLE8" id="Layer3">
+              </div>
+        </blockquote></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr >
+    <td height="30" align="center" class="STYLE8" ><span class="STYLE5"><span class="STYLE5">
+    <div id="foot" style="color: white; font-family: 幼圆; font-weight: bold; padding-top: 20px;">
+		<h3>现代科技体验中心</h3>
+        版权所有：上海市实验学校 总部地址：上海市浦东新区东明路300号 邮编：200125
+	</div>
+</body>
+
+</html>

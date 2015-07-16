@@ -1,0 +1,101 @@
+﻿#parse("ExampleHead1.htm")
+<style type="text/css">
+ th, td {
+  padding:0;
+  text-align:center;
+ }
+ th {
+  background-color:#E8FFE8;
+ }
+ tr {
+  background-color:#E8FFE8;
+ }
+ .odd {
+  background-color:#FFF3EE;
+ }
+ .highlight {
+  background-color:#E0E0E0;
+}
+</style>
+<script type="text/javascript">
+    //动态给js添加class属性
+    function addClass(element, value) {
+        if (!element.className) {
+            element.className = value; //如果element本身不存在class,则直接添加class为value的值
+        } else {
+            element.className += " " + value; //如果element之前有一个class值，注意中间要多一个空格,然后再加上value的值
+        }
+    }
+    //隔行换色
+    function stripeTable() {
+        var tables = document.getElementsByTagName("table"); //遍历文档中的所有table
+        for (var i = 0; i < tables.length; i++) {
+            var rows = document.getElementsByTagName("tr");
+            for (var j = 0; j < rows.length; j++) {
+                if (j % 2 == 0) {
+                    addClass(rows[j], "odd"); //如是偶数行，则添加class为odd的属性
+                    //rows[j].setAttribute("class", "odd");
+                }
+            }
+        }
+    }
+    //鼠标经过时高亮显示
+    function highlightRows() {
+        var rows = document.getElementsByTagName("tr");
+        for (var i = 0; i < rows.length; i++) {
+            rows[i].oldClassName = rows[i].className; //首先保存之前的class值
+            rows[i].onmouseover = function () {
+                addClass(this, "highlight"); //鼠标经过时添加class为highlight的值
+            }
+            rows[i].onmouseout = function () {
+                this.className = this.oldClassName; //鼠标离开时还原之前的class值
+            }
+        }
+    }
+    function order(date, time) {
+        window.location.href = "UserOrder.ashx?Action=Order&Date=" + date + "&Time=" + time;
+    }
+    window.onload = function () {
+        stripeTable();
+        highlightRows();
+    }
+</script>
+#parse("ExampleHead2.htm")
+<div id="main">
+    <div id="mleft1">
+        <embed src="/Movie/形象.swf" style="width:100%; height:50%;"></embed>
+        <h4 align="center">说明事项</h4>
+        <ul style="list-style:none;">
+            <li><p align="left">1、按钮为橙色代表您已经预约当前时间段。</p></li>
+            <li><p align="left">2、按钮为灰色代表当前时间段已经闭馆或预约人数已满，无法预约。</p></li>
+            <li><p align="left">3、按钮为白色代表您可以预约当前时间段。</p></li>
+        </ul>
+    </div>
+    <div id="mright1">
+        <table style="width:100%;height:100%;padding:20px">
+            <thead>
+                <tr height="40px">
+                    <th align="left">序号</th>
+                    <th align="left">参观日期</th>
+                    <th align="left">参观时间段</th>
+                    <th align="left">状态</th>
+                    <th align="left">预约</th>
+                </tr>
+            </thead>
+            <tbody>
+                #foreach($m in $Model.Order)
+                    <tr>             
+                        <td>$m.Id</td>
+                        <td>$m.Date</td>  
+                        <td>$m.Time</td>            
+                        <td>已经预约$m.NotOrderNumber张,可预约$m.OrderNumber张</td>
+                        <td>
+                            <input type="button" value="$m.ButtonValue" onclick="order('$m.Date','$m.Time')" $m.State style="background-color:$m.OrderYesOrNo; width:100px; height:35px; border:1px solid Red; font-family:幼圆; font-weight:bold;" />
+                        </td>
+                    </tr>
+                #end
+            </tbody>
+        </table>
+    </div>
+</div>
+#parse("ExampleFoot.htm")

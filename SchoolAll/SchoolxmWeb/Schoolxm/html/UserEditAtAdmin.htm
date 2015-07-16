@@ -1,0 +1,142 @@
+﻿#parse("ExampleHeadUp1.htm")
+<style type="text/css">
+    #mytable
+    {
+        font-family: 幼圆; 
+        font-weight: bold; 
+        width: 100%; 
+        padding-top:50px;
+        }
+    #mytable tr
+    {
+        height:45px;
+        }
+    #mytable input
+    {
+        height:30px;
+        width:180px;
+        }
+    #mysubmit
+    {
+        background-color:Orange; 
+        border:1px solid Red; 
+        font-family:幼圆; 
+        font-weight:bold;
+        }
+</style>
+<script type="text/javascript">
+    window.onload = function () {
+        if (("$Model.user.Gender") == ("男         ")) {
+            document.getElementById("Man").checked = "checked";
+        }
+        else {
+            document.getElementById("Wan").checked = "checked";
+        }
+    };
+    var allow1 = 1;
+    var allow2 = 1;
+    function checkEmail() {
+        var email = document.getElementById("Email").value;
+        var sEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+        email = email.trim();
+        if (email.length <= 0) {
+            document.getElementById("EmailMsg").innerHTML = "邮箱地址不能为空";
+            allow1 = 0;
+        }
+        else if (!sEmail.exec(email)) {
+            document.getElementById("EmailMsg").innerHTML = "邮箱格式不正确";
+            allow1 = 0;
+        }
+        else {
+            document.getElementById("EmailMsg").innerHTML = "";
+            allow1 = 1;
+        }
+    }
+    function checkRealName() {
+        var realName = document.getElementById("RealName").value;
+        realName = realName.trim();
+        if (realName.length <= 0) {
+            document.getElementById("RealNameMsg").innerHTML = "真实姓名不能为空";
+            allow2 = 0;
+        }
+        else {
+            document.getElementById("RealNameMsg").innerHTML = "";
+            allow2 = 1;
+        }
+    }
+    function check() {
+        checkEmail();
+        checkRealName();
+        if (allow1 == 1 && allow2 == 1) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+</script>
+#parse("ExampleHeadUp2.htm")
+您好,$Model.Name
+#parse("ExampleHeadDown.htm")
+<div id="main">
+    <div id="mleft">
+        <embed src="/Movie/形象.swf" style="width:100%; height:70%;"></embed>
+    </div>
+    <div id="mright">
+        <form action="/UserEditAtAdmin.ashx" onsubmit="return check()">
+            <input type="hidden" name="Action" value="$Model.Action" />
+            <table border="0" id="mytable"> 
+                <tr>
+                    <td width="80px">用户名</td>
+                    <td align="left">
+                        <input type="text" id="UserName" name="UserName" value="$Model.user.UserName" readonly="readonly"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>邮箱</td>
+                    <td align="left">
+                        <input type="text" id="Email" name="Email" value="$Model.user.Email" onblur="checkEmail()"/>
+                        <span id="EmailMsg" style="color:Red"></span>
+                    </td>
+                </tr>
+                <tr style="height:30px;">
+                    <td></td>
+                    <td align="left">                      
+                        <font color="#bbb">*请填写真实邮箱</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>性别</td>
+                    <td align="left">
+                        <input type="radio" value="男" id="Man" name="Gender" style="height:20px; width:20px;" />男
+                        <input type="radio" value="女" id="Wan" name="Gender" style="height:20px; width:20px;"/>女
+                    </td>
+                </tr>
+                <tr style="height:30px;">
+                    <td></td>
+                    <td align="left">                      
+                        <font color="#bbb">*请选择性别</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>真实姓名</td>
+                    <td align="left">
+                        <input type="text" id="RealName" name="RealName" value="$Model.user.RealName" onblur="checkRealName()"/>
+                        <span id="RealNameMsg" style="color:Red"></span>
+                    </td>
+                </tr>
+                <tr style="height:30px;">
+                    <td></td>
+                    <td align="left">                      
+                        <font color="#bbb">*请填写真实姓名</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="left"><input type="submit" id="mysubmit" style="height:38px; width:100px;" value="确认" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+#parse("ExampleFoot.htm")

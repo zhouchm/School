@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>现代科技体验中心</title>
+    <link rel="stylesheet" type="text/css" href="/css/UserCSS.css" />
+    <script type="text/javascript" src="/js/UserJS.js"></script>
+</head>
+<body>
+    <div id="header">
+    	<div id="hleft">
+
+            <table border="0">
+                <tr>
+                    <td align="left" width="80px"><img src="/Images/header.png" alt="" height="70px" width="70px" /></td>
+                    <td align="left" style="font-family: 幼圆; font-weight: bold;font-size: 18px;">
+                        <p>上海市实验学校<br/>SHANGHAI EXPERIMENT SCHOOL</p>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+      	<div id="hright">
+
+            <div style="font-family: 幼圆; font-weight: bold; padding-top: 4px; padding-right: 20px; text-align: right;">
+                $Model.str
+            </div>
+		    <div class="ullicss" style="font-family: 幼圆;">
+                <ul>
+                    <li>
+                        <a href="/Home.ashx" class="xialaguang"><span>首页</span></a>
+                    </li>
+                    <li>
+                        <a href="/UserOrder.ashx" class="xialaguang"><span>个人预约</span></a>
+                    </li>
+                    <li>
+                        <a href="/GroupOrder.ashx" class="xialaguang"><span>团体预约</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="xialaguang"><span>展馆介绍</span></a>
+                    </li>
+                    <li onmouseover="show('id1')" onmouseout="shut('id1')">
+                        <a href="#" ><span>个人中心</span></a>
+                        <ul id="id1" style="display:none">
+            		        <li style="float: left"><a href="/UserModPwd.ashx"><span>修改密码</span></a></li>
+            		        <li><a href="/UserEdit.ashx?Action=user_edit"><span>个人信息</span></a></li>
+            	        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="xialaguang"><span>联系我们</span></a>
+                    </li>   
+                </ul>
+            </div>
+
+		</div>
+    </div>
+    <div id="home">
+  
+	</div>

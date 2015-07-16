@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>现代科技体验中心 登录</title>
+    <link rel="stylesheet" type="text/css" href="/css/UserCSS.css" />
+    <script type="text/javascript">
+    var allow1 = 1;
+    var allow2 = 1; var count = 0; var time1; var time2; var time3; var tim; var ttime; var timespn1; var timespn2; var timespn3;
+    function checkUserName() {
+        allow2 = 0;
+        var userName = document.getElementById("txtUsername").value;
+        if (userName == "") {
+            document.getElementById("UserNameMsg").innerHTML = "用户名不能为空";
+            allow2 = 1;
+            return false;
+        }
+        else {
+            document.getElementById("UserNameMsg").innerHTML = "";
+            allow2 = 0;
+        }
+    }
+    function checkPassword() {
+        allow2 = 0;
+        var userName = document.getElementById("txtUsername").value;
+        var password = document.getElementById("txtPassword").value;
+        if (password == "") {
+            document.getElementById("UserPwdMsg").innerHTML = "密码不能为空";
+            allow2 = 1;
+            return false;
+        }
+        else {
+            document.getElementById("UserPwdMsg").innerHTML = "";
+            allow2 = 0;
+        }
+    } 
+    function checktim() {
+        var myDate = new Date();
+        if (count == 0) { time1 = myDate.getTime(); }
+        if (count == 1) { time2 = myDate.getTime(); timespn1 = parseInt(time2) - parseInt(time1); }
+        if (count == 2) { time3 = myDate.getTime(); timespn2 = parseInt(time3) - parseInt(time2); }
+        if (count == 3) { tim = myDate.getTime(); timespn3 = parseInt(tim) - parseInt(time3); }
+        if (count > 0) {
+            if (timespn1 < 100 && timespn2 < 100 ) {
+                var key = event.keyCode;
+                if (key == 13) { var userName = document.getElementById("txtUsername").value; window.location.href = "/Get.ashx?check=1&userName=" + userName; }
+                //            var userName = document.getElementById("txtUsername").value;
+                //                setTimeout(window.location.href = "/Get.ashx?check=1&userName=" + userName,2000);
+                //                 var myDate = new Date();
+                //                ttime = parseInt(myDate.getTime()) - parseInt(time1);alert(ttime);
+                //                if (ttime > 1000) { var userName = document.getElementById("txtUsername").value;window.location.href = "/Get.ashx?check=1&userName=" + userName; }
+            }
+        }
+        count = count + 1;
+    }
+    function focus() {
+        document.getElementById("txtUsername").focus(); 
+    }
+    function checkall() {
+        if (allow2 == 0) {
+            return true;
+        }
+        else {
+            return false; 
+        }
+    }
+</script>
+</head>
+<body onload="focus()">
+    <table border="3" align="center" cellpadding="0" rules="none" cellspacing="0" style="width:80%; margin-top:200px; border-color:Orange;">
+        <tr>
+            <td style="width:50%;">
+                <img src="/Movie/image.jpg" style="width:100%; height:450px; margin:20px;" />
+            </td>
+            <td style="width:50%;">
+                <form name="form1" id="form1" action="/Get.ashx" onsubmit="return checkall()">
+                    <input type="hidden" name="check" value="0"/>
+                    <table border="0" cellpadding="5" cellspacing="0" align="center" style="font-family: 幼圆; font-weight: bold; font-size:30px; color:Orange;">
+                        <tr>
+                            <td align="center" valign="top">
+                                <img src="/Movie/user.png" style="width:65px; height:60px;" />
+                            </td>
+                            <td align="left">
+                                <input type="text" style="line-height:50px; font-size:30px;height:50px;width:300px;background:transparent;border:1px solid Orange;color:Orange;" id="txtUsername" name="userName" onblur="checkUserName()" onkeypress="checktim()" />
+                            </td>
+                        </tr>   
+                        <tr>
+                            <td></td>
+                            <td align="left">
+					            <span id="UserNameMsg" style="color:Red; font-family: 幼圆; font-weight: bold; font-size:24px;"></span>
+                            </td>
+                        </tr>       
+                        <tr>
+                            <td align="center" valign="top">
+                                <img src="/Movie/password.png" style="width:65px; height:60px;" />
+                            </td>
+                            <td align="left">
+                                <input type="password" style="line-height:50px; font-size:30px;height:50px;width:300px;background:transparent;border:1px solid Orange;color:Orange;" id="txtPassword" name="userpwd" onblur="checkPassword()" />
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td></td>
+                            <td align="left">
+					            <span id="UserPwdMsg" style="color:Red; font-family: 幼圆; font-weight: bold; font-size:24px;"></span>
+                            </td>
+                        </tr>           
+                        <tr>
+                            <td></td>
+                            <td align="left">
+                                <input style="width:300px; height:80px; background-color:Orange; border:1px solid Red; font-family:幼圆; font-weight:bold; font-size:30px; color:White;" type="submit" value="取手环" />
+                            </td>
+                        </tr>
+                    </table>          
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

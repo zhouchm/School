@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <canvas id = "myCanvas" width = '500' height = '500'>Canvas画线技巧</canvas>
+  <script type="text/javascript">
+      function dra() {
+
+          var myCanvas = document.getElementById("myCanvas");
+          var context = myCanvas.getContext("2d");
+          context.fillStyle = 'rgba(0,0,0,0)'; //填充颜色：红色，半透明
+          context.strokeStyle = 'hsl(120,50%,50%)'; //线条颜色：绿色
+          context.lineWidth = 3; //设置线宽
+          context.beginPath();
+          //      context.moveTo(x0, y0); //将画笔移到x0,y0处
+          //      context.lineTo(x1, y1); //从x0,y0到x1,y1画一条线
+          //      context.lineTo(x2, y2); //从x1,y1到x2,y2画条线
+          //      context.fill(); //填充
+          //      context.stroke(); //画线
+
+          context.moveTo(10, 10);
+          var node1 = new Array[$Model.Node.length];
+          //          foreach($p in $Model.Node)
+          //          {
+          //              if ($p == "智慧精灵读卡器")
+          //                  context.lineTo(50, 50);
+          //              if ($p == "体验导览读卡器")
+          //                  context.lineTo(100, 100);
+          //          }
+          for (var i = 0; i < $Model.Node.length; i++) {
+
+              if ($Model.Node == "智慧精灵读卡器")
+                  context.lineTo(50, 50);
+              if ($Model.Node[i] == "体验导览读卡器")
+                  context.lineTo(100, 100);
+          }
+          //context.lineTo(300, 200);
+          //context.closePath(); //可以把这句注释掉再运行比较下不同
+          context.stroke(); //画线框
+          context.fill(); //填充颜色
+      }
+  </script>
+</head>
+<body onload="dra()">
+</body>
+</html>

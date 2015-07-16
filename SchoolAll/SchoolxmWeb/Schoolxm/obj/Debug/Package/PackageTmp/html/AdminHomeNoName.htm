@@ -1,0 +1,42 @@
+﻿#parse("ExampleHeadUp1.htm")
+<style type="text/css">
+a:link
+{
+text-decoration:none;
+color:black;
+}
+a:visited{
+text-decoration:none;
+color:black;
+}
+a:hover
+{
+text-decoration:none;
+color:red;
+}
+a:active{
+text-decoration:underline;
+color:orange;
+}
+</style>
+#parse("ExampleHeadUp2.htm")
+<a href="AdminLogin.ashx">登入</a>
+#parse("ExampleHeadDown.htm")
+<div id="main">、
+<table border=0>
+<tr><td height="50px"></td></tr><tr>
+<td><a href="/UserList.ashx" ><img src="/Images/user.png" width="200px" height="200px" alt="用户列表"></a></td>
+<td width="50px"></td>
+<td><a href="/OrederNumber.ashx?Action=Set" ><img src="/Images/ord.png" width="200px" height="200px" alt="预约管理"/></a></td>
+<td width="50px"></td>
+<td><a href="NewList.ashx" ><img src="/Images/Ne.jpg" width="200px" height="200px" alt="新闻列表"/></a></td>
+</tr><tr><td height="30px"></td></tr><tr>
+<td><a href="ScenceList.ashx" ><img src="/Images/scence.jpg" width="200px" height="200px" alt="场景列表"/></a></td>
+<td width="50px"></td>
+<td><a href="AdminEdit.ashx?Action=Adm_edit" ><img src="/Images/admin.jpg" width="200px" height="200px"alt="管理员信息"/></a></td>
+<td width="50px"></td>
+<td><a href="/GroupOrder.ashx" ><img src="/Images/Groub.jpg" width="200px" height="200px"alt="团体预约"/></a></td>
+</tr>
+</table>
+</div>
+#parse("ExampleFoot.htm")

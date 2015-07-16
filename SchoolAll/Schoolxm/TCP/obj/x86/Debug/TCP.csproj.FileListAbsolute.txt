@@ -1,0 +1,74 @@
+F:\StudySoftware\VS2010\Schoolxm\TCP\bin\Debug\TCP.exe
+F:\StudySoftware\VS2010\Schoolxm\TCP\bin\Debug\TCP.pdb
+F:\StudySoftware\VS2010\Schoolxm\TCP\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\StudySoftware\VS2010\Schoolxm\TCP\obj\x86\Debug\TCP.Form1.resources
+F:\StudySoftware\VS2010\Schoolxm\TCP\obj\x86\Debug\TCP.Properties.Resources.resources
+F:\StudySoftware\VS2010\Schoolxm\TCP\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+F:\StudySoftware\VS2010\Schoolxm\TCP\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+F:\StudySoftware\VS2010\Schoolxm\TCP\obj\x86\Debug\TCP.exe
+F:\StudySoftware\VS2010\Schoolxm\TCP\obj\x86\Debug\TCP.pdb
+H:\Schoolxm\TCP\obj\x86\Debug\TCP.exe
+H:\Schoolxm\TCP\obj\x86\Debug\TCP.pdb
+H:\Schoolxm\TCP\bin\Debug\TCP.exe
+H:\Schoolxm\TCP\bin\Debug\TCP.pdb
+H:\Schoolxm\TCP\obj\x86\Debug\TCP.Form1.resources
+H:\Schoolxm\TCP\obj\x86\Debug\TCP.Properties.Resources.resources
+H:\Schoolxm\TCP\obj\x86\Debug\TCP.csproj.GenerateResource.Cache
+C:\Users\稳定\Documents\Tencent Files\345151175\FileRecv\Schoolxm\TCP\obj\x86\Debug\TCP.exe
+C:\Users\稳定\Documents\Tencent Files\345151175\FileRecv\Schoolxm\TCP\obj\x86\Debug\TCP.pdb
+C:\Users\稳定\Documents\Tencent Files\345151175\FileRecv\Schoolxm\TCP\bin\Debug\TCP.exe
+C:\Users\稳定\Documents\Tencent Files\345151175\FileRecv\Schoolxm\TCP\bin\Debug\TCP.pdb
+C:\Users\稳定\Documents\Tencent Files\345151175\FileRecv\Schoolxm\TCP\obj\x86\Debug\TCP.Form1.resources
+C:\Users\稳定\Documents\Tencent Files\345151175\FileRecv\Schoolxm\TCP\obj\x86\Debug\TCP.Properties.Resources.resources
+C:\Users\稳定\Documents\Tencent Files\345151175\FileRecv\Schoolxm\TCP\obj\x86\Debug\TCP.csproj.GenerateResource.Cache
+C:\Users\稳定\Documents\Tencent Files\345151175\FileRecv\Schoolxm\TCP\obj\x86\Debug\TCP.csprojResolveAssemblyReference.cache
+J:\Schoolxm\TCP\obj\x86\Debug\TCP.exe
+J:\Schoolxm\TCP\obj\x86\Debug\TCP.pdb
+C:\Users\wanghe\Desktop\Schoolxm\TCP\obj\x86\Debug\TCP.exe
+C:\Users\wanghe\Desktop\Schoolxm\TCP\obj\x86\Debug\TCP.pdb
+C:\Users\稳定\Desktop\Schoolxm\TCP\obj\x86\Debug\TCP.exe
+C:\Users\稳定\Desktop\Schoolxm\TCP\obj\x86\Debug\TCP.pdb
+C:\Users\Administrator\Desktop\Schoolxm\TCP\obj\x86\Debug\TCP.exe
+C:\Users\Administrator\Desktop\Schoolxm\TCP\obj\x86\Debug\TCP.pdb
+C:\Users\Administrator\Desktop\Schoolxm\TCP\bin\Debug\TCP.exe
+C:\Users\Administrator\Desktop\Schoolxm\TCP\bin\Debug\TCP.pdb
+C:\Users\Administrator\Desktop\Schoolxm\TCP\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Schoolxm\TCP\obj\x86\Debug\TCP.Form1.resources
+C:\Users\Administrator\Desktop\Schoolxm\TCP\obj\x86\Debug\TCP.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Schoolxm\TCP\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Administrator\Desktop\Schoolxm\TCP\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\wanghe\Desktop\Schoolxm\TCP\bin\Debug\TCP.exe
+C:\Users\wanghe\Desktop\Schoolxm\TCP\bin\Debug\TCP.pdb
+C:\Users\wanghe\Desktop\Schoolxm\TCP\obj\x86\Debug\TCP.csprojResolveAssemblyReference.cache
+C:\Users\wanghe\Desktop\Schoolxm\TCP\obj\x86\Debug\TCP.Form1.resources
+C:\Users\wanghe\Desktop\Schoolxm\TCP\obj\x86\Debug\TCP.Properties.Resources.resources
+C:\Users\wanghe\Desktop\Schoolxm\TCP\obj\x86\Debug\TCP.csproj.GenerateResource.Cache
+C:\Users\稳定\Desktop\desktop\Schoolxm\TCP\obj\x86\Debug\TCP.exe
+C:\Users\稳定\Desktop\desktop\Schoolxm\TCP\obj\x86\Debug\TCP.pdb
+F:\Project\2015-2-5\desktop\Schoolxm\TCP\obj\x86\Debug\TCP.exe
+F:\Project\2015-2-5\desktop\Schoolxm\TCP\obj\x86\Debug\TCP.pdb
+F:\Schoolxm\TCP\bin\Debug\TCP.exe
+F:\Schoolxm\TCP\bin\Debug\TCP.pdb
+F:\Schoolxm\TCP\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Schoolxm\TCP\obj\x86\Debug\TCP.Form1.resources
+F:\Schoolxm\TCP\obj\x86\Debug\TCP.Properties.Resources.resources
+F:\Schoolxm\TCP\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+F:\Schoolxm\TCP\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+F:\Schoolxm\TCP\obj\x86\Debug\TCP.exe
+F:\Schoolxm\TCP\obj\x86\Debug\TCP.pdb
+C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\TCP\bin\Debug\TCP.exe
+C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\TCP\bin\Debug\TCP.pdb
+C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\TCP\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\TCP\obj\x86\Debug\TCP.Form1.resources
+C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\TCP\obj\x86\Debug\TCP.Properties.Resources.resources
+C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\TCP\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\TCP\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\TCP\obj\x86\Debug\TCP.exe
+C:\Users\Administrator\Desktop\体验中心20102072020\Schoolxm\TCP\obj\x86\Debug\TCP.pdb
+H:\Schoolxm\TCP\obj\x86\Debug\TCP.csprojResolveAssemblyReference.cache
+C:\Users\稳定\Desktop\Schoolxm\TCP\bin\Debug\TCP.exe
+C:\Users\稳定\Desktop\Schoolxm\TCP\bin\Debug\TCP.pdb
+C:\Users\稳定\Desktop\Schoolxm\TCP\obj\x86\Debug\TCP.csprojResolveAssemblyReference.cache
+C:\Users\稳定\Desktop\Schoolxm\TCP\obj\x86\Debug\TCP.Form1.resources
+C:\Users\稳定\Desktop\Schoolxm\TCP\obj\x86\Debug\TCP.Properties.Resources.resources
+C:\Users\稳定\Desktop\Schoolxm\TCP\obj\x86\Debug\TCP.csproj.GenerateResource.Cache

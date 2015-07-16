@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>主题内容</title>
+<style type="text/css">
+			/*base*/
+			html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, font, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td {
+			    margin: 0;
+			    padding: 0;
+			    border: 0;
+			    outline: 0;
+			    font-size: 100%;
+			    vertical-align: baseline;
+			}
+			body {
+			    line-height: normal;
+				font-family:'Microsoft Yahei',Tahoma,Arial,Helvetica,Simsun,STHeiti;
+				word-break: normal;
+			}
+			
+			ol, ul , li{
+			    list-style: none;
+			}
+			blockquote, q {
+			    quotes: none;
+			}
+			blockquote:before, blockquote:after, q:before, q:after {
+			    content: '';
+			    content: none;
+			}
+			pre{
+				white-space:pre-wrap;
+			}
+			/* remember to define focus styles! */
+			:focus {
+			    outline:0;
+			}
+			/* remember to highlight inserts somehow! */
+			ins {
+			    text-decoration: none;
+			}
+			del {
+			    text-decoration: line-through;
+			}
+			/* tables still need 'cellspacing="0"' in the markup */
+			table {
+			    border-collapse: collapse;
+			    border-spacing: 0;
+			}
+			.clearfix:before, .clearfix:after {
+			    content: '\0020';
+			    display: block;
+			    overflow: hidden;
+			    visibility: hidden;
+			    width: 0;
+			    height: 0;
+			}
+			.clearfix:after {
+			    clear: both;
+			}
+			.clearfix {
+			    zoom: 1;
+			}
+			h1{font-size:16px}
+			h2, h3{font-size:14px}
+			h4, h5, h6{font-size:12px}
+			small{font-size:11px}
+			input, option, textarea{font-family:Arial;font-size:12px;}
+			.input-text{border:1px solid #888888;padding:2px 3px;}
+			/*html5 layout reset*/
+			article, aside, dialog, figure, footer, header, 
+			hgroup, nav, section, figcaption, details, summary {display:block}
+			
+			/*css3 transform transition*/
+			body {}
+			h1 {margin:50px 50px 0 50px; height:50px; line-height:50px; font-size:28px; color:#000;}
+			ul {width:990px; margin:50px auto 0;}
+			li {width:320px; height:200px; margin-bottom:20px; border:3px solid #ccc; box-shadow:0 0 1px #000; display:inline-block; overflow:hidden;}
+
+			/*auto------------------------------------------------------------------------------------*/
+			.oneDemo, .twoDemo, .threeDemo {width:320px; height:200px; position:relative; margin:0 auto;}
+			.transform{height:200px; overflow:hidden;}
+			.content {position:absolute; top:1px; left:1px; overflow:hidden;}
+			.content h3, .content p {width:285px; margin:0 auto; text-align:center; overflow:hidden; color:#fff; text-shadow:1px 0 1px #000;}
+			.content h3 {height:30px; line-height:30px; font-size:16px;}
+			.content p {height:45px; line-height:22px; font-size:14px; }
+			.content a {box-shadow:1px 0 1px #000; text-shadow:1px 0 1px #000;}
+			
+			/*oneDemo--------------------------------------------------------------------------------*/
+			.oneDemo .mask {position:absolute; top:0; left:0; display:block; width:360px; height:400px; opacity:1; background:rgba(230, 230, 230, 0.5);}
+			.oneDemo .mask-top {right:0; left:auto;
+						-moz-transform:rotate(58.5deg) translate(-424px, -65px); -webkit-transform:rotate(58.5deg) translate(-424px,-65px);
+			}
+			.oneDemo .mask-bottom {top:0; left:0;
+						-moz-transform:rotate(58.9deg) translate(253px,-45px); -webkit-transform:rotate(58.9deg) translate(253px,-45px);
+			}
+			.oneDemo .mask-top, .oneDemo .mask-bottom {opactiy:1;
+						-moz-transition:all 0.3s ease-in-out 0.6s; -webkit-transition:all 0.3s ease-in-out 0.6s;
+			}
+			.oneDemo:hover .mask-top {
+						-moz-transform:rotate(57.9deg) translate(-253px, -65px); -webkit-transform:rotate(57.9deg) translate(-253px,-65px);
+			}
+			.oneDemo:hover .mask-bottom {
+						-moz-transform:rotate(57.9deg) translate(85px, -31px); -webkit-transform:rotate(57.9deg) translate(85px,-31px);
+			}
+			.oneDemo:hover .mask-top, .oneDemo:hover .mask-bottom, .oneDemo:hover .content {
+						-moz-transition-delay:0.1s; -webkit-transition-delay:0.1s;	
+			}
+			.oneDemo .content {height:0; width:320px; background:rgba(110, 120, 110, 0.8); color:#fff; font-size:14px;
+						-moz-transform:rotate(-40deg) translate(-100px, 100px); -webkit-transform:rotate(-40deg) translate(-100px, 100px);
+						-moz-transition:all 0.2s ease-in-out 0.3s; -webkit-transition:all 0.2s ease-in-out 0.3s;
+			}
+			.oneDemo:hover .content {width:280px; height:60px; margin-top:50px; padding:20px;
+						-moz-transform:rotate(0) translate(0); -webkit-transform:rotate(0) translate(0);
+			}
+
+			/*twoDemo----------------------------------------------------------------------------------*/
+			.twoDemo .content {height:200px; padding:0 20px; position:absolute; top:0; left:0; display:block; opacity:0; background:rgba(130, 130, 130, 0.5);
+							  -moz-transform:translate(460px, -100px) rotate(180deg); -webkit-transform:translate(460px, -100px) rotate(180deg);
+				              -moz-transition:all 0.2s ease-in-out 0.4s; -webkit-transition:all 0.2s ease-in-out 0.4s;
+				              opacity:0;
+			}
+			.twoDemo:hover .content {opacity:1;
+						-moz-transform:translate(0) rotate(0); -webkit-transform:translate(0) rotate(0);
+						-moz-transition-delay:0s; -webkit-transition-delay:0s;
+			}
+			.twoDemo .content h3 {margin:30px auto 0; background:rgba(110, 120, 110, 0.8); box-shadow:1px 0 1px #000;
+						-moz-transform:translateY(-100px); -webkit-transform:translateY(-100px);
+						-moz-transition:all 0.2s ease-in-out 0s; -webkit-transtiton:all 0.2s ease-in-out 0s;
+			}
+			.twoDemo .content:hover h3 {
+						-moz-transform:translateY(0px); -webkit-transform:translateY(0px);
+						-moz-tarnsition-delay:0.5s; -webkit-transition-delay:0.5s;
+			}
+			.twoDemo .content p {text-align:center; margin-top:20px;
+						-moz-transform:translateX(300px) rotate(90deg); -webkit-transform:translateX(300px) rotate(90deg);
+						-moz-transition:all 0.4s ease-in-out 0s; -webkit-transition:all 0.4s ease-in-out 0s;
+			}
+			.twoDemo .content:hover p {-moz-transform:translateX(0) rotate(0); -webkit-transform:translateX(0) rotate(0);}
+			.twoDemo .content a {display:block; width:80px; margin:20px 0 0 0; height:30px; font-size:14px; color:#fff; background:rgba(110, 120, 110, 0.8); text-decoration:none; line-height:30px; text-align:center;
+						-moz-transform:translateX(-300px) rotate(-90deg); -webkit-transform:translateX(-300px) rotate(-90deg);
+						-moz-transition:all 0.5s ease-in-out 0s; -webkit-transition:all 0.5s ease-in-out 0s;
+			}
+			.twoDemo .content:hover a {-moz-transform:translateX(0) rotate(0); -webkit-transform:translateX(0) rotate(0);}
+
+			/*threeDemo----------------------------------------------------------*/
+			.threeDemo .transform {-moz-transition:all 1s ease-in 0.1s; -webkit-transition:all 1s ease-in 0.1s;}
+			.threeDemo:hover .transform {-moz-transform:rotate(720deg) scale(0); -webkit-transform:rotate(720deg) scale(0);}
+			.threeDemo .content {height:200px; padding:0 20px; top:-200px; opactiy:0;background-color:rgba(200, 200, 200, 0.5);
+						-moz-transition:all 0.3s ease-out 0.5s; -webkit-transition:all 0.3s ease-out 0.5s;
+			}
+			.threeDemo:hover .content {top:0; opactiy:1;
+						-moz-animation:0.9s linear 0s normal none 1 bounceY; -webkit-animation:0.9s linear 0s normal none 1 bounceY;
+						-moz-transition-delay:0s; -webkit-transition-delay:0s;
+			}
+			.threeDemo .content h3 {margin:30px auto 0; background:rgba(110, 120, 110, 0.8); box-shadow:1px 0 1px #000;
+						-moz-transform:translateY(-200px); -webkit-transform:translateY(-200px);
+						-moz-transition:all 0.6s ease-in-out 0.1s; -webkit-transition:all 0.6s ease-in-out 0.1s;
+			}
+			.threeDemo .content:hover h3 {
+						-moz-transform:translateY(0); -webkit-transform:translateY(0);
+						-moz-transition-delay:0; -webkit-transition-delay:0;
+			}
+			.threeDemo .content p {margin-top:20px;
+						-moz-transform:translateY(-200px); -webkit-transform:translateY(-200px);
+						-moz-transition:all 0.4s ease-in-out 0.1s; -webkit-transition:all 0.4s ease-in-out 0.1s;
+			}
+			.threeDemo .content:hover p {
+						-moz-transform:translateY(0); -webkit-transform:translateY(0);
+						-moz-transition-delay:0; -webkit-transition-delay:0;
+			}
+			.threeDemo .content a {display:block; width:80px; margin:20px 0 0 0; height:30px; font-size:14px; color:#fff; background:rgba(110, 120, 110, 0.8); text-decoration:none; line-height:30px; text-align:center;
+						-moz-transform:translateY(-200px); -webkit-transform:translateY(-200px);
+						-moz-transition:all 0.2s ease-in-out 0.1s; -webkit-transition:all 0.2s ease-in-out 0.1s;
+			}
+			.threeDemo .content:hover a {
+						-moz-transform:translateY(0); -webkit-transform:translateY(0);
+						-moz-transition-delay:0; -webkit-transition-delay:0;
+			}
+			@-moz-keyframes bounceY {
+			    0% { -moz-transform: translateY(-200px);}
+			    40% { -moz-transform: translateY(-180px);}
+			    65% { -moz-transform: translateY(-102px);}
+			    82% { -moz-transform: translateY(-75px);}
+			    92% { -moz-transform: translateY(-32px);}
+			    55%, 75%, 87%, 97%, 100% { -moz-transform: translateY(0px);}
+			}
+			@-webkit-keyframes bounceY {
+			    0% { -webkit-transform: translateY(-200px);}
+			    40% { -webkit-transform: translateY(-180px);}
+			    65% { -webkit-transform: translateY(-102px);}
+			    82% { -webkit-transform: translateY(-75px);}
+			    92% { -webkit-transform: translateY(-32px);}
+			    55%, 75%, 87%, 97%, 100% { -webkit-transform: translateY(0px);}
+			}
+		.STYLE7 {font-weight: bold}
+</style>
+
+<script type="text/javascript">
+window.onload=function()
+{
+        var oNav=document.getElementById('nav');
+        var oBox=document.getElementById('box');
+        var oSubnav=document.getElementById('subnav');
+        var aLi=oSubnav.getElementsByTagName('li');
+        var i=0;
+        oNav.onclick=function()
+        {
+                if(oBox.style.display=='block')
+                {
+                        oBox.style.display='none';
+                }
+                else
+                {
+                        oBox.style.display='block';
+                }
+        }
+        for(i=0;i<aLi.length;i++)
+        {
+                if(aLi[i].className=='list')
+                {
+                        aLi[i].onmousemove=function()
+                        {
+                                for(i=0;i<aLi.length;i++)
+                                {
+                                        var aDivList=this.getElementsByTagName('div')[0];
+                                        aDivList.style.display='block';
+                                        this.className='active';
+                                }
+                        }
+                        aLi[i].onmouseout=function()
+                        {
+                                for(i=0;i<aLi.length;i++)
+                                {
+                                        var aDivList=this.getElementsByTagName('div')[0];
+                                        aDivList.style.display='none';
+                                        this.className='list';                
+                                }
+                        }
+                }
+        }
+};
+</script>
+}
+<style>
+.STYLE9 {color: #9966FF; font-weight: bold; font-size: 24px; }
+.STYLE11 {
+	font-size: large;
+	font-weight: bold;
+	color: #6633FF;
+}
+.STYLE13 {color: #FF00FF}
+</style>
+
+<script type="text/JavaScript">
+<!--
+
+function MM_displayStatusMsg(msgStr) { //v1.0
+  status=msgStr;
+  document.MM_returnValue = true;
+}
+//-->
+</script>
+</head>
+
+<body topmargin=0 leftmargin=0>
+<center>
+<script language="JavaScript" type="text/javascript">
+
+function nowTime(format)
+{
+var dt=new Date();
+//年份
+this.Year=dt.getFullYear();
+//月份
+this.Month=dt.getMonth()+1;
+//日期
+this.Day=dt.getDate();
+//星期几,数字
+this.Week=dt.getDay();
+//星期几，中文
+this.WeekDay='日一二三四五六'.charAt(dt.getDay());
+//24制小时
+this.Hours24=dt.getHours();
+//12制小时
+this.Hours12=this.Hours24>12 ? this.Hours24 :this.Hours24-12;
+//分钟
+this.Minutes=dt.getMinutes();
+//秒
+this.Seconds=dt.getSeconds();
+format=format.replace("yy",this.Year);
+format=format.replace("MM",this.Month);
+format=format.replace("dd",this.Day);
+format=format.replace("HH",this.Hours24);
+format=format.replace("hh",this.Hours12);
+format=format.replace("mm",this.Minutes);
+format=format.replace("ss",this.Seconds);
+format=format.replace("ww",this.Week);
+format=format.replace("WW",this.WeekDay);
+//时间显示在页面中哪个标签里，这里是其id
+this.toShow=function (element)
+{
+  document.getElementById(element).innerHTML=format;
+}
+}
+</script>
+<table width="1233" height="702" border="0" align="center" cellspacing="0" background="/Images/body.jpg">
+<tr>
+  <td width="1231" height="204" align="center" valign="bottom"><img src="/Images/home.png" width="1230" height="215" vspace="0" /></tr>
+  
+
+  <tr>
+    <td height="350" align="right"><table width="1231" height="421" border="0" cellspacing="6">
+      <tr valign="top">
+        <td height="409" align="center" valign="middle"><p>
+        
+        <p><font color=black> </span>
+          <p>
+          
+          <hr />
+          <p class="STYLE9">体验项目
+          （<span class="STYLE11"><a href="yinxiangshiyan.html">印象实验</a>、<a href="kejiyujiao.html">科技寓教、</a><a href="lexuezhiyuan .html">乐学致远</a></span>）
+           <ul>
+			<li>
+				<div class="oneDemo">
+					<img src="/Images/zhihuizhimenkaiqi.jpg" width="320" height="400" class="transform" />
+					<div class="mask mask-top"></div>
+					<div class="mask mask-bottom"></div>
+					<!--<div class="content">
+						<h3>印象实验</h3>
+
+				  序厅、智慧精灵、体验导览、智慧之门、实验历程、实验风采，这是智慧之门开启的现象。</div>
+				</div>-->
+			</li>
+			<li>
+				<div class="twoDemo">
+					<img src="/Images/chushihudongjiaoxue.jpg" width="320" height="400" class="transform" />
+                    <div class="mask mask-top"></div>
+					<div class="mask mask-bottom"></div>
+					<div class="content">
+<!--
+						<h3>科技寓教</h3>
+						<p>科技寓教有四种模式：互动教学、立体影院、微型演讲、校园监控，此时是初始化教学 </p>
+						<a href="#">共享空间</a>-->
+					</div>
+			  </div>
+			</li>
+			<li>
+
+				<div class="threeDemo">
+					<img src="/Images/zhnegtixiaoguo.jpg" width="320" height="400" class="transform" />
+                    <div class="mask mask-top"></div>
+					<div class="mask mask-bottom"></div>
+					<div class="content">
+						<!--<h3>乐学致远</h3>
+						<p>智能绘画、虚拟钢琴、欢乐运动、虚拟实验室、趣味考场、玩转化学、体验回顾</p>
+						<a href="#">快乐学习</a>-->
+					</div>
+
+			  </div>
+			</li>
+		</ul>  
+		  <span class="STYLE13"><br>
+		  <span class="STYLE11"><font font-weight:bold;">▲ 现代科技 创造寓教空间， 体验教学 营造轻松氛围， 快乐学习 造就智慧人生 </font></span></span><font color=green font-weight:bold;"><br>
+		<hr>
+		<p align="center"> <a href="/html/tyzxintroduce.htm">返回首页</p>
+		</font>       
+          <p align="center" class="STYLE6"></p>    
+    </table></td>
+  </tr>
+  <tr bgcolor="#006633">
+    <td width="1231" height="45" align="center" onmouseover="MM_displayStatusMsg('欢迎来到上海市实验学校体验中心');return document.MM_returnValue"><span class="STYLE3"><span class="STYLE7">欢迎来到上海市实验学校体验中心    </span>
+    <div id="timeshow">
+        <script language="JavaScript" type="text/javascript" defer="defer">
+  setInterval("new nowTime('当前时间：yy年MM月dd日 星期WW hh:mm:ss ').toShow('timeshow')",1000);
+      </script>
+      </div>
+      <table width="1231" border="0" cellspacing="6">
+</table>
+</center>
+</body>
+
+</html>
